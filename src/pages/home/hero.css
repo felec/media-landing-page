@@ -1,0 +1,139 @@
+.phone-device-mask {
+  height: 100%;
+  width: 100%;
+  mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+  -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 0px -2px;
+  -webkit-mask-position: 0px -2px;
+}
+
+.tablet-device-mask {
+  mask-image: url(/public/assets/masks/hero-ipad-device-mask-large.png);
+  -webkit-mask-image: url(/public/assets/masks/hero-ipad-device-mask-large.png);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.phone-size {
+  height: auto;
+  width: 300px;
+}
+
+.phone-img-mask {
+  mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+  -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: 0px -1.5px;
+  -webkit-mask-position: 0px -1.5px;
+}
+
+.tablet-img-mask {
+  mask-image: url(/public/assets/masks/ipad-image-mask.svg);
+  -webkit-mask-image: url(/public/assets/masks/ipad-image-mask.svg);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 768px) {
+  .phone-device-mask {
+    height: 100%;
+    width: 100%;
+    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: -3px -6px;
+    -webkit-mask-position: -3px -6px;
+  }
+
+  .phone-size {
+    height: auto;
+    width: 400px;
+  }
+
+  .phone-img-mask {
+    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 3px -1.5px;
+    -webkit-mask-position: 3px -1.5px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .phone-device-mask {
+    height: 100%;
+    width: 100%;
+    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 1.5px -1px;
+    -webkit-mask-position: 1.5px -1px;
+  }
+
+  .phone-size {
+    height: auto;
+    width: 400px;
+  }
+
+  .phone-img-mask {
+    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 1px 0px;
+    -webkit-mask-position: 1px 0px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .phone-device-mask {
+    height: 100%;
+    width: 100%;
+    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 0px 0px;
+    -webkit-mask-position: 0px 0px;
+  }
+
+  .phone-size {
+    height: auto;
+    width: 500px;
+  }
+
+  .phone-img-mask {
+    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 1px 0px;
+    -webkit-mask-position: 1px 0px;
+  }
+}
