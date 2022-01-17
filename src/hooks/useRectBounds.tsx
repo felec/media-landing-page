@@ -6,7 +6,6 @@ export const useRectBounds = (ref: RefObject<HTMLElement>, scroll: number) => {
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
-      console.log(rect);
       setBounds({ top: rect.top, left: rect.left });
     }
   }, [ref, scroll]);
