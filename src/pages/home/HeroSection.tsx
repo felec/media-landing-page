@@ -1,4 +1,10 @@
-import { MouseEvent } from 'react';
+import {
+  useRef,
+  createRef,
+  forwardRef,
+  MouseEvent,
+  ComponentPropsWithoutRef,
+} from 'react';
 import {
   motion,
   MotionValue,
@@ -8,14 +14,13 @@ import {
 
 import './hero.css';
 import { useIsMobile } from '../../hooks/useIsMobile';
-import {
-  animateXLeft,
-  animateXRight,
-  animateYUp,
-  animateYDown,
-  animateLargeVideo,
-  animateMobileVideo,
-} from '../../utils/animations';
+import { useRectBounds } from '../../hooks/useRectBounds';
+import { animateLargeVideo, animateMobileVideo } from '../../utils/animations';
+
+interface RectBounds {
+  top: number;
+  left: number;
+}
 
 const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
   const vid = e.currentTarget;
@@ -28,8 +33,9 @@ const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
 };
 
 export const HeroSection = () => {
+  const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
-  const { isMobile } = useIsMobile();
+  const { bounds } = useRectBounds(ref, scrollYProgress.get());
 
   return (
     <section>
@@ -90,12 +96,10 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
-              fnX={animateXLeft}
-              isMobile={isMobile}
-              scroll={scrollYProgress}
+              refBounds={bounds}
             />
             <VideoDevice
-              fn={isMobile ? animateMobileVideo : animateLargeVideo}
+              ref={ref}
               cb={handleVideoPlayback}
               scroll={scrollYProgress}
             />
@@ -145,120 +149,123 @@ export const HeroSection = () => {
   );
 };
 
-const VideoDevice = ({
-  cb,
-  fn,
-  scroll,
-}: {
+interface VidProps extends ComponentPropsWithoutRef<'div'> {
   cb: (e: MouseEvent<HTMLVideoElement>) => void;
-  fn: (scroll: number) => number;
   scroll: MotionValue<number>;
-}) => {
-  const scale = useTransform(scroll, fn);
+}
+const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
+  ({ scroll, cb }, ref) => {
+    const { isMobile } = useIsMobile();
+    const fn = isMobile ? animateMobileVideo : animateLargeVideo;
+    const scale = useTransform(scroll, fn);
 
-  return (
-    <motion.div
-      style={{ left: '50%', scale }}
-      className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-48 lg:top-[23rem] xl:top-44 xl:-ml-72 z-50'
-    >
-      <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
-        <source
-          media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-iphone-shadow-large.png'
-          type='image/png'
-        />
-        <source
-          media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-iphone-shadow-medium.png'
-          type='image/png'
-        />
-        <source
-          media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-iphone-shadow-small.png'
-          type='image/png'
-        />
-
-        <img src='/assets/masks/hero-iphone-shadow-large.png' alt='shadow' />
-      </picture>
-
-      <picture className='phone-device-mask absolute top-0 left-0'>
-        <source
-          media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-iphone-device-large.jpg'
-          type='image/jpg'
-        />
-        <source
-          media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-iphone-device-medium.jpg'
-          type='image/jpg'
-        />
-        <source
-          media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-iphone-device-small.jpg'
-          type='image/jpg'
-        />
-
-        <img src='/assets/masks/hero-iphone-device-large.jpg' alt='phone' />
-      </picture>
-
-      <div className='z-10 relative'>
-        <video
-          className='phone-img-mask relative z-10'
-          onClick={cb}
-          // autoPlay
-          muted
-          loop
-        >
-          <source src='/assets/videos/fitness-class.mp4' type='video/mp4' />
-        </video>
-
-        <picture className='phone-img-mask absolute top-0 left-0'>
+    return (
+      <motion.div
+        ref={ref}
+        style={{ left: '50%', scale }}
+        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-48 lg:top-[23rem] xl:top-44 xl:-ml-72 z-50'
+      >
+        <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
+          <source
+            media='(min-width: 1024px)'
+            srcSet='/assets/masks/hero-iphone-shadow-large.png'
+            type='image/png'
+          />
           <source
             media='(min-width: 768px)'
-            srcSet={'/assets/images/fitness-class-medium.jpg'}
+            srcSet='/assets/masks/hero-iphone-shadow-medium.png'
+            type='image/png'
+          />
+          <source
+            media='(min-width: 0px)'
+            srcSet='/assets/masks/hero-iphone-shadow-small.png'
+            type='image/png'
+          />
+
+          <img src='/assets/masks/hero-iphone-shadow-large.png' alt='shadow' />
+        </picture>
+
+        <picture className='phone-device-mask absolute top-0 left-0'>
+          <source
+            media='(min-width: 1024px)'
+            srcSet='/assets/masks/hero-iphone-device-large.jpg'
+            type='image/jpg'
+          />
+          <source
+            media='(min-width: 768px)'
+            srcSet='/assets/masks/hero-iphone-device-medium.jpg'
             type='image/jpg'
           />
           <source
             media='(min-width: 0px)'
-            srcSet={'/assets/images/fitness-class-large.jpg'}
+            srcSet='/assets/masks/hero-iphone-device-small.jpg'
             type='image/jpg'
           />
 
-          <img
-            className='phone-img-mask'
-            src={'/assets/images/fitness-class-large.jpg'}
-            alt=''
-          />
+          <img src='/assets/masks/hero-iphone-device-large.jpg' alt='phone' />
         </picture>
-      </div>
-    </motion.div>
-  );
-};
+
+        <div className='z-10 relative'>
+          <video
+            className='phone-img-mask relative z-10'
+            onClick={cb}
+            // autoPlay
+            muted
+            loop
+          >
+            <source src='/assets/videos/fitness-class.mp4' type='video/mp4' />
+          </video>
+
+          <picture className='phone-img-mask absolute top-0 left-0'>
+            <source
+              media='(min-width: 768px)'
+              srcSet={'/assets/images/fitness-class-medium.jpg'}
+              type='image/jpg'
+            />
+            <source
+              media='(min-width: 0px)'
+              srcSet={'/assets/images/fitness-class-large.jpg'}
+              type='image/jpg'
+            />
+
+            <img
+              className='phone-img-mask'
+              src={'/assets/images/fitness-class-large.jpg'}
+              alt=''
+            />
+          </picture>
+        </div>
+      </motion.div>
+    );
+  }
+);
 
 const IphoneDevice = ({
   medium,
   large,
-  isMobile,
   classNames,
-  scroll,
-  fnX,
-  fnY = (_) => 0,
+  refBounds,
 }: {
   medium: string;
   large: string;
-  isMobile: boolean;
+  refBounds: RectBounds;
   classNames: string;
-  scroll: MotionValue<number>;
-  fnX: (scroll: number) => number;
-  fnY?: (scroll: number) => number;
 }) => {
-  const x = useTransform(scroll, fnX);
-  const y = useTransform(scroll, fnY);
+  const ref = useRef<HTMLDivElement>(null);
+  // const { bounds } = useRectBounds(ref);
+  const { isMobile } = useIsMobile();
   const scale = isMobile ? 0.75 : 1;
+  // console.log(bounds.left, refBounds.left);
 
   return (
     <motion.div
-      style={{ left: '50%', scale, translateX: x, translateY: y }}
+      ref={ref}
+      style={{
+        left: '50%',
+        scale,
+        translateX: 0,
+        translateY: 0,
+      }}
       className={`phone-size absolute ${classNames}`}
     >
       <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
@@ -314,27 +321,18 @@ const IphoneDevice = ({
 const IpadDevice = ({
   medium,
   large,
-  isMobile,
   classNames,
-  scroll,
-  fnX,
-  fnY = (v) => 0,
 }: {
   medium: string;
   large: string;
-  isMobile: boolean;
   classNames: string;
-  scroll: MotionValue<number>;
-  fnX: (scroll: number) => number;
-  fnY?: (scroll: number) => number;
 }) => {
-  const x = useTransform(scroll, fnX);
-  const y = useTransform(scroll, fnY);
+  const { isMobile } = useIsMobile();
   const scale = isMobile ? 0.75 : 1;
 
   return (
     <motion.div
-      style={{ left: '50%', scale, translateX: x, translateY: y }}
+      style={{ left: '50%', scale, translateX: 0, translateY: 0 }}
       className={`phone-size absolute ${classNames}`}
     >
       <picture style={{ width: '118%' }} className='absolute top-0 left-0'>
