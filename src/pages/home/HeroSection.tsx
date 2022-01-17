@@ -3,8 +3,7 @@ import {
   forwardRef,
   MouseEvent,
   ComponentPropsWithoutRef,
-  useEffect,
-  useState,
+  useRef,
 } from 'react';
 import {
   motion,
@@ -32,7 +31,6 @@ export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
   const { position } = useElementPosition(ref, scrollYProgress);
-  const [origin, setOrigin] = useState<RectBounds>({ top: 0, left: 0 });
 
   const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
     const vid = e.currentTarget;
@@ -43,18 +41,6 @@ export const HeroSection = () => {
       vid.pause();
     }
   };
-  console.log(origin.left, position.left);
-
-  useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-
-      setOrigin({
-        top: rect.top,
-        left: rect.left,
-      });
-    }
-  }, [ref]);
 
   return (
     <section>
@@ -115,8 +101,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
-              origin={origin}
               refPosition={position}
+              scroll={scrollYProgress}
             />
             <VideoDevice
               ref={ref}
@@ -261,23 +247,30 @@ const IphoneDevice = ({
   large,
   classNames,
   refPosition,
-  origin,
+  scroll,
 }: {
   medium: string;
   large: string;
-  origin: RectBounds;
   refPosition: RectBounds;
   classNames: string;
+  scroll: MotionValue<number>;
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { position } = useElementPosition(ref, scroll);
   const { isMobile } = useIsMobile();
+  const margin = 237.609375;
+  const diff = refPosition.left - position.left;
+  const translateX = margin - diff === 0 ? 0 : diff;
+  console.log(position, refPosition, diff);
   const scale = isMobile ? 0.75 : 1;
 
   return (
     <motion.div
+      ref={ref}
       style={{
         left: '50%',
         scale,
-        translateX: refPosition.left - origin.left,
+        translateX,
         translateY: 0,
       }}
       className={`phone-size absolute ${classNames}`}

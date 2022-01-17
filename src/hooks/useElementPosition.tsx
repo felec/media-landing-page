@@ -27,5 +27,16 @@ export const useElementPosition = (
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+
+      setPosition({
+        top: rect.top,
+        left: rect.left,
+      });
+    }
+  }, [ref]);
+
   return { position };
 };
