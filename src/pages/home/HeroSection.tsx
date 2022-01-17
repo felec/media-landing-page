@@ -1,9 +1,10 @@
 import {
-  useRef,
   createRef,
   forwardRef,
   MouseEvent,
   ComponentPropsWithoutRef,
+  useEffect,
+  useState,
 } from 'react';
 import {
   motion,
@@ -14,28 +15,46 @@ import {
 
 import './hero.css';
 import { useIsMobile } from '../../hooks/useIsMobile';
-import { useRectBounds } from '../../hooks/useRectBounds';
+import { useElementPosition } from '../../hooks/useElementPosition';
 import { animateLargeVideo, animateMobileVideo } from '../../utils/animations';
 
-interface RectBounds {
+export interface RectBounds {
   top: number;
   left: number;
 }
 
-const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
-  const vid = e.currentTarget;
-
-  if (vid.paused) {
-    vid.play();
-  } else {
-    vid.pause();
-  }
-};
+interface VidProps extends ComponentPropsWithoutRef<'div'> {
+  cb: (e: MouseEvent<HTMLVideoElement>) => void;
+  scroll: MotionValue<number>;
+}
 
 export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
-  const { bounds } = useRectBounds(ref, scrollYProgress.get());
+  const { position } = useElementPosition(ref, scrollYProgress);
+  const [origin, setOrigin] = useState<RectBounds>({ top: 0, left: 0 });
+
+  const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
+    const vid = e.currentTarget;
+
+    if (vid.paused) {
+      vid.play();
+    } else {
+      vid.pause();
+    }
+  };
+  console.log(origin.left, position.left);
+
+  useEffect(() => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+
+      setOrigin({
+        top: rect.top,
+        left: rect.left,
+      });
+    }
+  }, [ref]);
 
   return (
     <section>
@@ -96,7 +115,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
-              refBounds={bounds}
+              origin={origin}
+              refPosition={position}
             />
             <VideoDevice
               ref={ref}
@@ -149,10 +169,6 @@ export const HeroSection = () => {
   );
 };
 
-interface VidProps extends ComponentPropsWithoutRef<'div'> {
-  cb: (e: MouseEvent<HTMLVideoElement>) => void;
-  scroll: MotionValue<number>;
-}
 const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
   ({ scroll, cb }, ref) => {
     const { isMobile } = useIsMobile();
@@ -244,26 +260,24 @@ const IphoneDevice = ({
   medium,
   large,
   classNames,
-  refBounds,
+  refPosition,
+  origin,
 }: {
   medium: string;
   large: string;
-  refBounds: RectBounds;
+  origin: RectBounds;
+  refPosition: RectBounds;
   classNames: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  // const { bounds } = useRectBounds(ref);
   const { isMobile } = useIsMobile();
   const scale = isMobile ? 0.75 : 1;
-  // console.log(bounds.left, refBounds.left);
 
   return (
     <motion.div
-      ref={ref}
       style={{
         left: '50%',
         scale,
-        translateX: 0,
+        translateX: refPosition.left - origin.left,
         translateY: 0,
       }}
       className={`phone-size absolute ${classNames}`}
