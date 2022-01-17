@@ -4,8 +4,9 @@ export const useRectBounds = (ref: RefObject<HTMLElement>, scroll: number) => {
   const [bounds, setBounds] = useState({ top: 0, left: 0 });
 
   useEffect(() => {
-    if (ref.current && scroll) {
+    if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
+      console.log(rect);
       setBounds({ top: rect.top, left: rect.left });
     }
   }, [ref, scroll]);
