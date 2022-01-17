@@ -259,9 +259,9 @@ const IphoneDevice = ({
   const { position } = useElementPosition(ref, scroll);
   const { isMobile } = useIsMobile();
   const margin = 237.609375;
-  const diff = refPosition.left - position.left;
-  const translateX = margin - diff === 0 ? 0 : diff;
-  console.log(position, refPosition, diff);
+  const diff = position.left - refPosition.left;
+  // const translateX = margin - diff === 0 ? 0 : margin - diff;
+  console.log(diff);
   const scale = isMobile ? 0.75 : 1;
 
   return (
@@ -270,7 +270,7 @@ const IphoneDevice = ({
       style={{
         left: '50%',
         scale,
-        translateX,
+        translateX: 0,
         translateY: 0,
       }}
       className={`phone-size absolute ${classNames}`}
