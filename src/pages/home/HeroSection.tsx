@@ -15,7 +15,12 @@ import {
 import './hero.css';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { usePositionOnScroll } from '../../hooks/usePositionOnScroll';
-import { animateLargeVideo, animateMobileVideo } from '../../utils/animations';
+import {
+  animateLargeVideo,
+  animateMobileVideo,
+  animateXLeft,
+  animateXRight,
+} from '../../utils/animations';
 import * as origins from '../../utils/constants';
 
 export interface RectBounds {
@@ -107,8 +112,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
-              refPosition={position}
-              originX={origins.leftDevice}
+              translateX={animateXLeft(position, origins.bottomIphone)}
+              translateY={0}
               scroll={scrollYProgress}
             />
             <VideoDevice
@@ -122,8 +127,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
-              refPosition={position}
-              originX={origins.rightDevice}
+              translateX={animateXRight(position, origins.bottomIphone)}
+              translateY={0}
               scroll={scrollYProgress}
             />
 
@@ -253,39 +258,21 @@ const IphoneDevice = ({
   medium,
   large,
   classNames,
-  refPosition,
-  originX,
-  originY,
+  translateX,
+  translateY,
   scroll,
 }: {
   medium: string;
   large: string;
-  refPosition: RectBounds;
   classNames: string;
   scroll: MotionValue<number>;
-  originX: Origins;
-  originY?: Origins;
+  translateX: number;
+  translateY: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { isMobile } = useIsMobile();
   const scale = isMobile ? 0.75 : 1;
   const { position } = usePositionOnScroll(ref, scroll);
-
-  const updateX = (o: Origins) => {
-    const x = refPosition.left - o.diff;
-    const translateX = x + (o.diff - o.margin);
-
-    return translateX;
-  };
-
-  const updateY = (o?: Origins) => {
-    if (!o) return 0;
-
-    const y = refPosition.top - o.diff;
-    const translateY = y + (o.diff - o.margin);
-
-    return translateY;
-  };
 
   return (
     <motion.div
@@ -293,8 +280,8 @@ const IphoneDevice = ({
       style={{
         left: '50%',
         scale,
-        translateX: updateX(originX),
-        translateY: updateY(originY),
+        translateX,
+        translateY,
       }}
       className={`phone-size absolute ${classNames}`}
     >

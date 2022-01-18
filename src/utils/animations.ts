@@ -1,3 +1,5 @@
+import { Origins, RectBounds } from '../pages/home/HeroSection';
+
 export const animateMobileVideo = (scroll: number): number => {
   const scale = 11.5;
 
@@ -20,4 +22,18 @@ export const animateLargeVideo = (scroll: number): number => {
   const finalScale = scale - scroll * 19.3;
 
   return finalScale;
+};
+
+export const animateXLeft = (pos: RectBounds, o: Origins) => {
+  const x = pos.left - o.diff;
+  const translateX = x + (o.diff - o.margin);
+
+  return translateX;
+};
+
+export const animateXRight = (pos: RectBounds, o: Origins) => {
+  const x = pos.left + o.diff;
+  const translateX = o.diff + o.margin - x;
+
+  return translateX;
 };
