@@ -14,12 +14,18 @@ import {
 
 import './hero.css';
 import { useIsMobile } from '../../hooks/useIsMobile';
-import { useElementPosition } from '../../hooks/useElementPosition';
+import { usePositionOnScroll } from '../../hooks/usePositionOnScroll';
 import { animateLargeVideo, animateMobileVideo } from '../../utils/animations';
+import * as origins from '../../utils/constants';
 
 export interface RectBounds {
   top: number;
   left: number;
+}
+
+export interface Origins {
+  diff: number;
+  margin: number;
 }
 
 interface VidProps extends ComponentPropsWithoutRef<'div'> {
@@ -30,7 +36,7 @@ interface VidProps extends ComponentPropsWithoutRef<'div'> {
 export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
-  const { position } = useElementPosition(ref, scrollYProgress);
+  const { position } = usePositionOnScroll(ref, scrollYProgress);
 
   const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
     const vid = e.currentTarget;
@@ -102,6 +108,7 @@ export const HeroSection = () => {
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
               refPosition={position}
+              originX={origins.leftDevice}
               scroll={scrollYProgress}
             />
             <VideoDevice
@@ -109,16 +116,16 @@ export const HeroSection = () => {
               cb={handleVideoPlayback}
               scroll={scrollYProgress}
             />
-            {/* <IphoneDevice
+            <IphoneDevice
               classNames={
                 'top-52 ml-[5.5rem] md:top-[24rem] md:ml-32 lg:top-[23rem] lg:ml-[8.5rem] xl:top-44 xl:ml-[15.5rem]'
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
-              fnX={animateXLeft}
-              isMobile={isMobile}
+              refPosition={position}
+              originX={origins.rightDevice}
               scroll={scrollYProgress}
-            /> */}
+            />
 
             {/* Bottom Ipad Row */}
             {/* <IpadDevice
@@ -247,6 +254,8 @@ const IphoneDevice = ({
   large,
   classNames,
   refPosition,
+  originX,
+  originY,
   scroll,
 }: {
   medium: string;
@@ -254,15 +263,29 @@ const IphoneDevice = ({
   refPosition: RectBounds;
   classNames: string;
   scroll: MotionValue<number>;
+  originX: Origins;
+  originY?: Origins;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { position } = useElementPosition(ref, scroll);
   const { isMobile } = useIsMobile();
-  const margin = 237.609375;
-  const diff = position.left - refPosition.left;
-  // const translateX = margin - diff === 0 ? 0 : margin - diff;
-  console.log(diff);
   const scale = isMobile ? 0.75 : 1;
+  const { position } = usePositionOnScroll(ref, scroll);
+
+  const updateX = (o: Origins) => {
+    const x = refPosition.left - o.diff;
+    const translateX = x + (o.diff - o.margin);
+
+    return translateX;
+  };
+
+  const updateY = (o?: Origins) => {
+    if (!o) return 0;
+
+    const y = refPosition.top - o.diff;
+    const translateY = y + (o.diff - o.margin);
+
+    return translateY;
+  };
 
   return (
     <motion.div
@@ -270,8 +293,8 @@ const IphoneDevice = ({
       style={{
         left: '50%',
         scale,
-        translateX: 0,
-        translateY: 0,
+        translateX: updateX(originX),
+        translateY: updateY(originY),
       }}
       className={`phone-size absolute ${classNames}`}
     >
