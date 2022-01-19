@@ -1,25 +1,23 @@
-import { Origins, RectBounds } from '../pages/home/HeroSection';
+import { RectBounds, SCROLL_LIMIT } from '../interfaces';
 
 export const animateMobileVideo = (scroll: number): number => {
   const scale = 11.5;
+  const s = scroll > SCROLL_LIMIT ? SCROLL_LIMIT : scroll;
 
-  if (scroll < 0.05) return scale;
+  if (s < 0.05) return scale;
 
-  if (scroll > 0.543) return 0.75;
-
-  const finalScale = scale - scroll * 19.75;
+  const finalScale = scale - s * 26.1;
 
   return finalScale;
 };
 
 export const animateLargeVideo = (scroll: number): number => {
   const scale = 11.5;
+  const s = scroll > SCROLL_LIMIT ? SCROLL_LIMIT : scroll;
 
-  if (scroll < 0.03) return scale;
+  if (s < 0.03) return scale;
 
-  if (scroll > 0.543) return 1;
-
-  const finalScale = scale - scroll * 19.3;
+  const finalScale = scale - s * 25.5;
 
   return finalScale;
 };
