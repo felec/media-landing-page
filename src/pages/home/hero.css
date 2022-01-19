@@ -55,13 +55,8 @@
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: -6px -6px;
-    -webkit-mask-position: -6px -6px;
-  }
-
-  .phone-size {
-    height: auto;
-    width: 400px;
+    mask-position: -4px -4px;
+    -webkit-mask-position: -4px -4px;
   }
 
   .phone-img-mask {
@@ -71,8 +66,8 @@
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: 3px -1.5px;
-    -webkit-mask-position: 3px -1.5px;
+    mask-position: 2px -1px;
+    -webkit-mask-position: 2px -1px;
   }
 }
 

@@ -66,9 +66,9 @@ export const HeroSection = () => {
         <div className='sticky top-0 left-0 h-[140vh] xl:h-[180vh] overflow-hidden'>
           <div className='absolute h-full w-full'>
             {/* Top Ipad Row */}
-            {/* <IpadDevice
+            <IpadDevice
               classNames={
-                '-top-[8.5rem] -ml-[19.5rem] md:-top-20 md:-ml-[25.5rem] lg:-top-[6.5rem] lg:-ml-[25rem] xl:hidden'
+                '-top-[8.5rem] -ml-[19.5rem] md:-top-[16.5rem] md:-ml-[25rem] lg:-top-[6.5rem] lg:-ml-[25rem] xl:hidden'
               }
               medium={'/assets/images/side-stretch-medium.jpg'}
               large={'/assets/images/side-stretch-large.jpg'}
@@ -77,18 +77,18 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                '-top-[8.5rem] ml-2 md:-top-20 md:ml-6 lg:-top-[6.5rem] lg:ml-8 xl:hidden'
+                '-top-[8.5rem] ml-2 md:-top-[16.5rem] md:ml-24 lg:-top-[6.5rem] lg:ml-8 xl:hidden'
               }
               medium={'/assets/images/pre-stretch-medium.jpg'}
               large={'/assets/images/pre-stretch-large.jpg'}
               translateX={animateXRight(position) * 0.025}
               translateY={animateYUp(position)}
-            /> */}
+            />
 
             {/* Top Iphone Row */}
-            {/* <IphoneDevice
+            <IphoneDevice
               classNames={
-                'top-20 -ml-[27.5rem] md:top-[13rem] md:-ml-[38rem] lg:top-[12rem] lg:-ml-[32.5rem] xl:-top-28 xl:-ml-[58rem]'
+                'top-20 -ml-[27.5rem] md:top-[3rem] md:-ml-[34rem] lg:top-[12rem] lg:-ml-[32.5rem] xl:-top-28 xl:-ml-[58rem]'
               }
               medium={'/assets/images/laptop-workout-medium.jpg'}
               large={'/assets/images/laptop-workout-large.jpg'}
@@ -97,7 +97,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 -ml-[12.5rem] md:top-[13rem] md:-ml-72 lg:top-[12rem] lg:-ml-48 xl:-top-28 xl:-ml-[24.5rem]'
+                'top-20 -ml-[12.5rem] md:top-[3rem] md:-ml-[13.5rem] lg:top-[12rem] lg:-ml-48 xl:-top-28 xl:-ml-[24.5rem]'
               }
               medium={'/assets/images/beach-stretch-medium.jpg'}
               large={'/assets/images/beach-stretch-large.jpg'}
@@ -106,18 +106,18 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 ml-[2.5rem] md:top-[13rem] md:ml-8 lg:top-[12rem] lg:ml-[8.5rem] xl:-top-28 xl:ml-36'
+                'top-20 ml-[2.5rem] md:top-[3rem] md:ml-[7rem] lg:top-[12rem] lg:ml-[8.5rem] xl:-top-28 xl:ml-36'
               }
               medium={'/assets/images/knee-stretch-medium.jpg'}
               large={'/assets/images/knee-stretch-large.jpg'}
               translateX={animateXRight(position) * 0.05}
               translateY={animateYUp(position)}
-            /> */}
+            />
 
             {/* Bottom Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[32rem] lg:top-[23rem] lg:-ml-[32.5rem] xl:top-44 xl:-ml-[51.5rem]'
+                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35rem] lg:top-[23rem] lg:-ml-[32.5rem] xl:top-44 xl:-ml-[51.5rem]'
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
@@ -131,7 +131,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-32 lg:top-[23rem] lg:ml-[8.5rem] xl:top-44 xl:ml-[15.5rem]'
+                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[15.5rem] lg:top-[23rem] lg:ml-[8.5rem] xl:top-44 xl:ml-[15.5rem]'
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
@@ -140,9 +140,9 @@ export const HeroSection = () => {
             />
 
             {/* Bottom Ipad Row */}
-            {/* <IpadDevice
+            <IpadDevice
               classNames={
-                'top-[22.5rem] -ml-[19.5rem] md:top-[36.6rem] md:-ml-[25.5rem] lg:top-[36rem] lg:-ml-[25rem] xl:top-[35rem] xl:-ml-[42rem]'
+                'top-[22.5rem] -ml-[19.5rem] md:top-[46.5rem] md:-ml-[25rem] lg:top-[56rem] lg:-ml-[25rem] xl:top-[35rem] xl:-ml-[42rem]'
               }
               medium={'/assets/images/arm-raise-medium.jpg'}
               large={'/assets/images/arm-raise-large.jpg'}
@@ -151,13 +151,13 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                'top-[22.5rem] ml-2 md:top-[36.6rem] md:ml-6 lg:top-[36rem] lg:ml-8 xl:top-[35rem] xl:ml-[8rem]'
+                'top-[22.5rem] ml-2 md:top-[46.5rem] md:ml-24 lg:top-[56rem] lg:ml-8 xl:top-[35rem] xl:ml-[8rem]'
               }
               medium={'/assets/images/warrior-pose-medium.jpg'}
               large={'/assets/images/warrior-pose-large.jpg'}
               translateX={animateXRight(position) * 0.025}
               translateY={animateYDown(position) * 0.8}
-            /> */}
+            />
           </div>
         </div>
       </div>
@@ -186,7 +186,7 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
       <motion.div
         ref={ref}
         style={{ left: '50%', scale }}
-        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-48 lg:top-[23rem] xl:top-44 xl:-ml-72 z-50'
+        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[23rem] xl:top-44 xl:-ml-72 z-50'
       >
         <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
           <source
