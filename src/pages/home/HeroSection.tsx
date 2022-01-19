@@ -13,15 +13,15 @@ import {
 } from 'framer-motion';
 
 import './hero.css';
-import { useIsMobile } from '../../hooks/useIsMobile';
+import { useScreenSize } from '../../hooks/useScreenSize';
 import { usePositionOnScroll } from '../../hooks/usePositionOnScroll';
 import {
   animateXLeft,
   animateXRight,
-  animateLargeVideo,
-  animateMobileVideo,
   animateYUp,
   animateYDown,
+  animateLargeVideo,
+  animateMobileVideo,
 } from '../../utils/animations';
 
 export interface RectBounds {
@@ -68,7 +68,7 @@ export const HeroSection = () => {
             {/* Top Ipad Row */}
             <IpadDevice
               classNames={
-                '-top-[8.5rem] -ml-[19.5rem] md:-top-[16.5rem] md:-ml-[25rem] lg:-top-[6.5rem] lg:-ml-[25rem] xl:hidden'
+                '-top-[8.5rem] -ml-[19.5rem] md:-top-[16.5rem] md:-ml-[25rem] lg:-top-[22rem] lg:-ml-[29.5rem] xl:-top-16 xl:-ml-[42rem]'
               }
               medium={'/assets/images/side-stretch-medium.jpg'}
               large={'/assets/images/side-stretch-large.jpg'}
@@ -77,7 +77,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                '-top-[8.5rem] ml-2 md:-top-[16.5rem] md:ml-24 lg:-top-[6.5rem] lg:ml-8 xl:hidden'
+                '-top-[8.5rem] ml-2 md:-top-[16.5rem] md:ml-24 lg:-top-[22rem] lg:ml-[4.5rem] xl:-top-16 xl:ml-32'
               }
               medium={'/assets/images/pre-stretch-medium.jpg'}
               large={'/assets/images/pre-stretch-large.jpg'}
@@ -88,7 +88,7 @@ export const HeroSection = () => {
             {/* Top Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-20 -ml-[27.5rem] md:top-[3rem] md:-ml-[34rem] lg:top-[12rem] lg:-ml-[32.5rem] xl:-top-28 xl:-ml-[58rem]'
+                'top-20 -ml-[27.5rem] md:top-[3rem] md:-ml-[34.5rem] lg:top-[0.5rem] lg:-ml-[45rem] xl:top-[27rem] xl:-ml-[55rem]'
               }
               medium={'/assets/images/laptop-workout-medium.jpg'}
               large={'/assets/images/laptop-workout-large.jpg'}
@@ -97,7 +97,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 -ml-[12.5rem] md:top-[3rem] md:-ml-[13.5rem] lg:top-[12rem] lg:-ml-48 xl:-top-28 xl:-ml-[24.5rem]'
+                'top-20 -ml-[12.5rem] md:top-[3rem] md:-ml-[13.5rem] lg:top-[0.5rem] lg:-ml-[17.5rem] xl:top-[27rem] xl:-ml-[21rem]'
               }
               medium={'/assets/images/beach-stretch-medium.jpg'}
               large={'/assets/images/beach-stretch-large.jpg'}
@@ -106,7 +106,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 ml-[2.5rem] md:top-[3rem] md:ml-[7rem] lg:top-[12rem] lg:ml-[8.5rem] xl:-top-28 xl:ml-36'
+                'top-20 ml-[2.5rem] md:top-[3rem] md:ml-[7.5rem] lg:top-[0.5rem] lg:ml-[10rem] xl:top-[27rem] xl:ml-52'
               }
               medium={'/assets/images/knee-stretch-medium.jpg'}
               large={'/assets/images/knee-stretch-large.jpg'}
@@ -117,7 +117,7 @@ export const HeroSection = () => {
             {/* Bottom Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35rem] lg:top-[23rem] lg:-ml-[32.5rem] xl:top-44 xl:-ml-[51.5rem]'
+                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35rem] lg:top-[34rem] lg:-ml-[46.5rem] xl:top-[56rem] xl:-ml-[61rem]'
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
@@ -131,7 +131,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[15.5rem] lg:top-[23rem] lg:ml-[8.5rem] xl:top-44 xl:ml-[15.5rem]'
+                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[15.5rem] lg:top-[34rem] lg:ml-[21.5rem] xl:top-[56rem] xl:ml-[25rem]'
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
@@ -142,7 +142,7 @@ export const HeroSection = () => {
             {/* Bottom Ipad Row */}
             <IpadDevice
               classNames={
-                'top-[22.5rem] -ml-[19.5rem] md:top-[46.5rem] md:-ml-[25rem] lg:top-[56rem] lg:-ml-[25rem] xl:top-[35rem] xl:-ml-[42rem]'
+                'top-[22.5rem] -ml-[19.5rem] md:top-[46.5rem] md:-ml-[25rem] lg:top-[66rem] lg:-ml-[29.5rem] xl:top-[88.5rem] xl:-ml-[42rem]'
               }
               medium={'/assets/images/arm-raise-medium.jpg'}
               large={'/assets/images/arm-raise-large.jpg'}
@@ -151,7 +151,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                'top-[22.5rem] ml-2 md:top-[46.5rem] md:ml-24 lg:top-[56rem] lg:ml-8 xl:top-[35rem] xl:ml-[8rem]'
+                'top-[22.5rem] ml-2 md:top-[46.5rem] md:ml-24 lg:top-[66rem] lg:ml-[4.5rem] xl:top-[88.5rem] xl:ml-32'
               }
               medium={'/assets/images/warrior-pose-medium.jpg'}
               large={'/assets/images/warrior-pose-large.jpg'}
@@ -178,15 +178,15 @@ export const HeroSection = () => {
 
 const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
   ({ scroll, cb }, ref) => {
-    const { isMobile } = useIsMobile();
-    const fn = isMobile ? animateMobileVideo : animateLargeVideo;
+    const { size } = useScreenSize();
+    const fn = size < 768 ? animateMobileVideo : animateLargeVideo;
     const scale = useTransform(scroll, fn);
 
     return (
       <motion.div
         ref={ref}
         style={{ left: '50%', scale }}
-        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[23rem] xl:top-44 xl:-ml-72 z-50'
+        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[34rem] lg:-ml-[12.5rem] xl:top-[56rem] xl:-ml-72 z-50'
       >
         <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
           <source
@@ -277,8 +277,8 @@ const IphoneDevice = ({
   translateY: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { isMobile } = useIsMobile();
-  const scale = isMobile ? 0.75 : 1;
+  const { size } = useScreenSize();
+  const scale = size < 768 ? 0.75 : 1;
 
   return (
     <motion.div
@@ -355,15 +355,27 @@ const IpadDevice = ({
   translateY: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { isMobile } = useIsMobile();
-  const scale = isMobile ? 1 : 1.5;
+  const { size } = useScreenSize();
+
+  const handleScale = () => {
+    let scale = 1;
+
+    if (size >= 768 && size < 1024) {
+      scale = 1.5;
+    } else if (size >= 1024 && size < 1280) {
+      scale = 1.25;
+    } else if (size >= 1280) {
+      scale = 1.5;
+    }
+    return scale;
+  };
 
   return (
     <motion.div
       ref={ref}
       style={{
         left: '50%',
-        scale,
+        scale: handleScale(),
         translateX,
         translateY,
       }}
