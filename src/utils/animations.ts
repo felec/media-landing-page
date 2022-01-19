@@ -24,16 +24,26 @@ export const animateLargeVideo = (scroll: number): number => {
   return finalScale;
 };
 
-export const animateXLeft = (pos: RectBounds, o: Origins) => {
-  const x = pos.left - o.diff;
-  const translateX = x + (o.diff - o.margin);
+export const animateXLeft = (pos: RectBounds) => {
+  const translateX = pos.left - pos.originLeft;
 
   return translateX;
 };
 
-export const animateXRight = (pos: RectBounds, o: Origins) => {
-  const x = pos.left + o.diff;
-  const translateX = o.diff + o.margin - x;
+export const animateXRight = (pos: RectBounds) => {
+  const translateX = pos.originLeft - pos.left;
 
   return translateX;
+};
+
+export const animateYUp = (pos: RectBounds) => {
+  const translateY = pos.top - pos.originTop;
+
+  return translateY;
+};
+
+export const animateYDown = (pos: RectBounds) => {
+  const translateY = pos.originTop - pos.top;
+
+  return translateY;
 };

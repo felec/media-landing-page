@@ -8,16 +8,20 @@ export const usePositionOnScroll = (
   scroll: MotionValue<number>
 ) => {
   const [position, setPosition] = useState<RectBounds>({
+    originTop: 0,
+    originLeft: 0,
     top: 0,
     left: 0,
   });
 
   useEffect(() => {
-    scroll.onChange((_) => {
-      if (ref.current) {
+    scroll.onChange((scroll) => {
+      if (ref.current && scroll < 0.543) {
         const rect = ref.current.getBoundingClientRect();
 
         setPosition({
+          originLeft: window.innerWidth / 5.4,
+          originTop: 225,
           top: rect.top,
           left: rect.left,
         });

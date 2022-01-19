@@ -1,9 +1,9 @@
 import {
+  useRef,
   createRef,
   forwardRef,
   MouseEvent,
   ComponentPropsWithoutRef,
-  useRef,
 } from 'react';
 import {
   motion,
@@ -16,14 +16,17 @@ import './hero.css';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { usePositionOnScroll } from '../../hooks/usePositionOnScroll';
 import {
-  animateLargeVideo,
-  animateMobileVideo,
   animateXLeft,
   animateXRight,
+  animateLargeVideo,
+  animateMobileVideo,
+  animateYUp,
+  animateYDown,
 } from '../../utils/animations';
-import * as origins from '../../utils/constants';
 
 export interface RectBounds {
+  originTop: number;
+  originLeft: number;
   top: number;
   left: number;
 }
@@ -42,6 +45,7 @@ export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
   const { position } = usePositionOnScroll(ref, scrollYProgress);
+  // console.log(position);
 
   const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
     const vid = e.currentTarget;
@@ -68,7 +72,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/side-stretch-medium.jpg'}
               large={'/assets/images/side-stretch-large.jpg'}
-              matrix={[]}
+              translateX={animateXLeft(position) * 0.052}
+              translateY={animateYUp(position)}
             />
             <IpadDevice
               classNames={
@@ -76,33 +81,37 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/pre-stretch-medium.jpg'}
               large={'/assets/images/pre-stretch-large.jpg'}
-              matrix={[]}
+              translateX={animateXRight(position) * 0.025}
+              translateY={animateYUp(position)}
             /> */}
 
             {/* Top Iphone Row */}
             {/* <IphoneDevice
               classNames={
-                'top-20 -ml-[28rem] md:top-[13rem] md:-ml-[38rem] lg:top-[12rem] lg:-ml-[32.5rem] xl:-top-28 xl:-ml-[58rem]'
+                'top-20 -ml-[27.5rem] md:top-[13rem] md:-ml-[38rem] lg:top-[12rem] lg:-ml-[32.5rem] xl:-top-28 xl:-ml-[58rem]'
               }
               medium={'/assets/images/laptop-workout-medium.jpg'}
               large={'/assets/images/laptop-workout-large.jpg'}
-              matrix={[]}
+              translateX={animateXLeft(position) * 0.05}
+              translateY={animateYUp(position)}
             />
             <IphoneDevice
               classNames={
-                'top-20 -ml-52 md:top-[13rem] md:-ml-72 lg:top-[12rem] lg:-ml-48 xl:-top-28 xl:-ml-[24.5rem]'
+                'top-20 -ml-[12.5rem] md:top-[13rem] md:-ml-72 lg:top-[12rem] lg:-ml-48 xl:-top-28 xl:-ml-[24.5rem]'
               }
               medium={'/assets/images/beach-stretch-medium.jpg'}
               large={'/assets/images/beach-stretch-large.jpg'}
-              matrix={[]}
+              translateX={0}
+              translateY={animateYUp(position)}
             />
             <IphoneDevice
               classNames={
-                'top-20 ml-8 md:top-[13rem] md:ml-8 lg:top-[12rem] lg:ml-[8.5rem] xl:-top-28 xl:ml-36'
+                'top-20 ml-[2.5rem] md:top-[13rem] md:ml-8 lg:top-[12rem] lg:ml-[8.5rem] xl:-top-28 xl:ml-36'
               }
               medium={'/assets/images/knee-stretch-medium.jpg'}
               large={'/assets/images/knee-stretch-large.jpg'}
-              matrix={[]}
+              translateX={animateXRight(position) * 0.05}
+              translateY={animateYUp(position)}
             /> */}
 
             {/* Bottom Iphone Row */}
@@ -112,9 +121,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
-              translateX={animateXLeft(position, origins.bottomIphone)}
+              translateX={animateXLeft(position)}
               translateY={0}
-              scroll={scrollYProgress}
             />
             <VideoDevice
               ref={ref}
@@ -127,9 +135,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
-              translateX={animateXRight(position, origins.bottomIphone)}
+              translateX={animateXRight(position)}
               translateY={0}
-              scroll={scrollYProgress}
             />
 
             {/* Bottom Ipad Row */}
@@ -139,7 +146,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/arm-raise-medium.jpg'}
               large={'/assets/images/arm-raise-large.jpg'}
-              matrix={[]}
+              translateX={animateXLeft(position) * 0.025}
+              translateY={animateYDown(position) * 0.8}
             />
             <IpadDevice
               classNames={
@@ -147,7 +155,8 @@ export const HeroSection = () => {
               }
               medium={'/assets/images/warrior-pose-medium.jpg'}
               large={'/assets/images/warrior-pose-large.jpg'}
-              matrix={[]}
+              translateX={animateXRight(position) * 0.025}
+              translateY={animateYDown(position) * 0.8}
             /> */}
           </div>
         </div>
@@ -260,19 +269,16 @@ const IphoneDevice = ({
   classNames,
   translateX,
   translateY,
-  scroll,
 }: {
   medium: string;
   large: string;
   classNames: string;
-  scroll: MotionValue<number>;
   translateX: number;
   translateY: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { isMobile } = useIsMobile();
   const scale = isMobile ? 0.75 : 1;
-  const { position } = usePositionOnScroll(ref, scroll);
 
   return (
     <motion.div
@@ -339,17 +345,28 @@ const IpadDevice = ({
   medium,
   large,
   classNames,
+  translateX,
+  translateY,
 }: {
   medium: string;
   large: string;
   classNames: string;
+  translateX: number;
+  translateY: number;
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const { isMobile } = useIsMobile();
-  const scale = isMobile ? 0.75 : 1;
+  const scale = isMobile ? 1 : 1.5;
 
   return (
     <motion.div
-      style={{ left: '50%', scale, translateX: 0, translateY: 0 }}
+      ref={ref}
+      style={{
+        left: '50%',
+        scale,
+        translateX,
+        translateY,
+      }}
       className={`phone-size absolute ${classNames}`}
     >
       <picture style={{ width: '118%' }} className='absolute top-0 left-0'>
