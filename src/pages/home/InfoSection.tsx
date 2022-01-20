@@ -19,7 +19,7 @@ const subSectionVariants = {
 export const InfoSection = () => {
   return (
     <section className='h-[300vh] xl:h-min'>
-      <div className='flex flex-col items-center px-8 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[12%] ss:-translate-y-[23%] xs:-translate-y-[50%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-0 xl:py-24 text-3xl font-bold text-center'>
+      <div className='flex flex-col items-center px-8 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[12%] ss:-translate-y-[15%] xs:-translate-y-[42%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-0 xl:py-24 text-3xl font-bold text-center'>
         <motion.p
           initial='hidden'
           whileInView='visible'

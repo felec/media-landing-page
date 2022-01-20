@@ -2,6 +2,7 @@ import { RefObject, useEffect, useState } from 'react';
 import { MotionValue } from 'framer-motion';
 
 import { RectBounds, SCROLL_LIMIT } from '../interfaces';
+import { isBetween } from '../utils/helpers';
 
 export const usePositionOnScroll = (
   ref: RefObject<HTMLElement>,
@@ -14,7 +15,20 @@ export const usePositionOnScroll = (
     left: 0,
   });
 
-  console.log(position);
+  const calculateOriginLeft = () => {
+    const width = window.innerWidth;
+    let o = 227;
+
+    if (isBetween(width, 768, 1023)) {
+      o = 387;
+    } else if (isBetween(width, 1024, 1279)) {
+      o = 515;
+    } else if (width > 1280) {
+      o = 670;
+    }
+
+    return width - o;
+  };
 
   useEffect(() => {
     scroll.onChange((scroll) => {
@@ -22,10 +36,10 @@ export const usePositionOnScroll = (
         const rect = ref.current.getBoundingClientRect();
 
         setPosition({
-          originLeft: window.innerWidth / 5.4,
+          originLeft: calculateOriginLeft(),
           originTop: 225,
           top: rect.top,
-          left: rect.left,
+          left: window.innerWidth - rect.width,
         });
       }
     });

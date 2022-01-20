@@ -134,7 +134,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className='hidden 2xl:block'>
+      <div className='hidden 2xl:block min-h-screen'>
         <video
           onClick={handleVideoPlayback}
           // autoPlay
@@ -339,6 +339,7 @@ const IpadDevice = ({
     } else if (size >= 1280) {
       scale = 1.75;
     }
+
     return scale;
   };
 
