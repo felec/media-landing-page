@@ -3,16 +3,14 @@ import { motion } from 'framer-motion';
 
 const subSectionVariants = {
   hidden: {
-    translateY: -20,
+    translateY: 60,
     opacity: 0,
-    transition: {
-      ease: 'easeOut',
-    },
   },
   visible: {
     translateY: 0,
     opacity: 1,
     transition: {
+      duration: 0.5,
       ease: 'easeOut',
     },
   },
@@ -20,82 +18,122 @@ const subSectionVariants = {
 
 export const InfoSection = () => {
   return (
-    <motion.section
-      initial='hidden'
-      whileInView='visible'
-      className='flex justify-center h-[300vh]'
-    >
-      <div className='flex flex-col justify-evenly items-center h-full md:h-3/6 lg:h-2/6 xl:h-3/6 w-full md:w-10/12 lg:w-8/12 xl:w-6/12 px-4 py-16 md:py-0 text-3xl font-bold text-center'>
-        <motion.p variants={subSectionVariants}>
+    <section className='h-[300vh]'>
+      <div className='flex flex-col items-center px-6 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[5%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-[15%] text-3xl font-bold text-center'>
+        <motion.p
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.25 }}
+          variants={subSectionVariants}
+          className='md:w-9/12'
+        >
           <strong className='text-purple-600 opacity-95'>
             Best collection{' '}
           </strong>
           of videos &#8213; Pariatur ipsam, Veritatis esse, and Quisipa harum.
         </motion.p>
 
-        <p>
+        <motion.p
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.25 }}
+          variants={subSectionVariants}
+          className='md:w-9/12 my-12'
+        >
           <strong className='text-red-600 opacity-95'>200+ videos </strong>
           minima sint rem vitae.
-        </p>
+        </motion.p>
 
-        <p>
+        <motion.p
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.25 }}
+          variants={subSectionVariants}
+          className='md:w-7/12'
+        >
           <strong className='text-orange-600 opacity-95'>
             One subscription.{' '}
           </strong>
           Alias officiis. Expedita totam sint qunt.
-        </p>
+        </motion.p>
 
-        <p>
+        <motion.p
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.25 }}
+          variants={subSectionVariants}
+          className='md:w-5/12 my-12'
+        >
           <strong className='text-green-600 opacity-95'>
             Share with family{' '}
           </strong>
           veniam facere vero.
-        </p>
+        </motion.p>
 
-        <div className='w-10/12 flex flex-col items-center text-lg text-center'>
-          <h2>
-            <span>Free 1-month trial</span>
-            <br />
-            <span className='text-3xl'>$4.99/mo.</span>
-          </h2>
-
-          <p className='mt-4 text-gray-500 font-medium tracking-tight'>
-            After the free trial, get unlimited access to 200+ videos for the
-            price of one premium video each month.
-          </p>
-
-          <a
-            href='#'
-            className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+        <div className='flex flex-col lg:flex-row md:w-11/12'>
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            variants={subSectionVariants}
+            viewport={{ once: true, amount: 0.25 }}
+            className='flex flex-col items-center text-lg text-center'
           >
-            Try it free
-          </a>
-        </div>
+            <h2>
+              <span>Free 1-month trial</span>
+              <br />
+              <span className='text-3xl'>$4.99/mo.</span>
+            </h2>
 
-        <div className='w-10/12 flex flex-col items-center text-lg text-center'>
-          <h2>
-            <span>Free 1-month trial</span>
-            <br />
-            <span className='text-3xl'>Superscriber</span>
-          </h2>
+            <p className='mt-4 text-gray-500 font-medium tracking-tight'>
+              After the free trial, get unlimited access to 200+ videos for the
+              price of one premium video each month.
+            </p>
 
-          <p className='mt-4 text-gray-500 font-medium tracking-tight'>
-            Bundle premium videos with up to five other great services for one
-            low monthly price. And enjoy more for less.{' '}
-            <a href='#' className='text-blue-500 hover:underline ml-2'>
-              Learn More &#8250;
+            <a
+              href='#'
+              className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+            >
+              Try it free
             </a>
-          </p>
+          </motion.div>
 
-          <a
-            href='#'
-            className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            variants={subSectionVariants}
+            viewport={{ once: true, amount: 0.25 }}
+            className='flex flex-col items-center mt-12 lg:mt-0 text-lg text-center'
           >
-            Try Superscriber*
-          </a>
+            <h2>
+              <span>Free 1-month trial</span>
+              <br />
+              <span className='text-3xl'>Superscriber</span>
+            </h2>
+
+            <p className='mt-4 text-gray-500 font-medium tracking-tight'>
+              Bundle premium videos with up to five other great services for one
+              low monthly price. And enjoy more for less.{' '}
+              <a href='#' className='text-blue-500 hover:underline ml-2'>
+                Learn More &#8250;
+              </a>
+            </p>
+
+            <a
+              href='#'
+              className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+            >
+              Try Superscriber*
+            </a>
+          </motion.div>
         </div>
 
-        <div className='w-10/12 flex flex-col items-center text-lg text-center'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          variants={subSectionVariants}
+          viewport={{ once: true, amount: 0.25 }}
+          className='w-11/12 flex flex-col items-center mt-12 text-lg text-center'
+        >
           <h2 className='text-3xl'>Illum accusamus quasi odio!</h2>
 
           <p className='mt-4 font-medium tracking-tight'>
@@ -103,8 +141,8 @@ export const InfoSection = () => {
             esse autem quasi harum &#8213; non natus maxime veritatis architecto
             explicabo adipisci doloremque quam eaque quo mollitia totam.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
