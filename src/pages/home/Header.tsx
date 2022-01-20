@@ -15,7 +15,7 @@ export const Header = () => {
           Aspernatur dolorem corporis eius neque facere quae quibusdam,
           excepturi, sint, eaque.
         </p>
-        <a className='text-blue-500 hover:underline ml-2' href='#'>
+        <a href='#' className='text-blue-500 hover:underline ml-2'>
           Learn More &#8250;
         </a>
       </div>

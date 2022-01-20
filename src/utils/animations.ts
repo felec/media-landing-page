@@ -6,7 +6,7 @@ export const animateMobileVideo = (scroll: number): number => {
 
   if (s < 0.05) return scale;
 
-  const finalScale = scale - s * 26.1;
+  const finalScale = scale - s * 32.97;
 
   return finalScale;
 };
@@ -17,7 +17,7 @@ export const animateLargeVideo = (scroll: number): number => {
 
   if (s < 0.03) return scale;
 
-  const finalScale = scale - s * 25.5;
+  const finalScale = scale - s * 32.2;
 
   return finalScale;
 };

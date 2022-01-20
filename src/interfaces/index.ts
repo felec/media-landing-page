@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, MouseEvent } from 'react';
 import { MotionValue } from 'framer-motion';
 
-export const SCROLL_LIMIT = 0.411;
+export const SCROLL_LIMIT = 0.326;
 
 export interface RectBounds {
   originTop: number;
