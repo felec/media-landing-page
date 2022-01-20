@@ -18,14 +18,14 @@ const subSectionVariants = {
 
 export const InfoSection = () => {
   return (
-    <section className='h-[300vh]'>
-      <div className='flex flex-col items-center px-6 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[5%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-[15%] text-3xl font-bold text-center'>
+    <section className='h-[300vh] xl:h-min'>
+      <div className='flex flex-col items-center px-8 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[12%] ss:-translate-y-[23%] xs:-translate-y-[50%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-0 xl:py-24 text-3xl font-bold text-center'>
         <motion.p
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='md:w-9/12'
+          className='xs:w-9/12 xl:w-5/12'
         >
           <strong className='text-purple-600 opacity-95'>
             Best collection{' '}
@@ -38,7 +38,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='md:w-9/12 my-12'
+          className='xs:w-8/12 xl:w-4/12 my-12'
         >
           <strong className='text-red-600 opacity-95'>200+ videos </strong>
           minima sint rem vitae.
@@ -49,7 +49,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='md:w-7/12'
+          className='xs:w-7/12 xl:w-3/12'
         >
           <strong className='text-orange-600 opacity-95'>
             One subscription.{' '}
@@ -62,7 +62,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='md:w-5/12 my-12'
+          className='xs:w-5/12 xl:w-3/12 my-12'
         >
           <strong className='text-green-600 opacity-95'>
             Share with family{' '}
@@ -70,13 +70,13 @@ export const InfoSection = () => {
           veniam facere vero.
         </motion.p>
 
-        <div className='flex flex-col lg:flex-row md:w-11/12'>
+        <div className='flex flex-col lg:flex-row w-11/12 xl:w-7/12'>
           <motion.div
             initial='hidden'
             whileInView='visible'
             variants={subSectionVariants}
             viewport={{ once: true, amount: 0.25 }}
-            className='flex flex-col items-center text-lg text-center'
+            className='flex flex-col items-center xl:mr-4 text-lg text-center'
           >
             <h2>
               <span>Free 1-month trial</span>
@@ -132,7 +132,7 @@ export const InfoSection = () => {
           whileInView='visible'
           variants={subSectionVariants}
           viewport={{ once: true, amount: 0.25 }}
-          className='w-11/12 flex flex-col items-center mt-12 text-lg text-center'
+          className='flex flex-col items-center w-11/12 xl:w-7/12 mt-12 text-lg text-center'
         >
           <h2 className='text-3xl'>Illum accusamus quasi odio!</h2>
 

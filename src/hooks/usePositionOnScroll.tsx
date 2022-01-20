@@ -14,6 +14,8 @@ export const usePositionOnScroll = (
     left: 0,
   });
 
+  console.log(position);
+
   useEffect(() => {
     scroll.onChange((scroll) => {
       if (ref.current && scroll < SCROLL_LIMIT) {

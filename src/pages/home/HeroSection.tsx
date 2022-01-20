@@ -18,7 +18,6 @@ export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
   const { position } = usePositionOnScroll(ref, scrollYProgress);
-  // console.log(position);
 
   const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
     const vid = e.currentTarget;
@@ -135,7 +134,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className='hidden 2xl:block w-screen'>
+      <div className='hidden 2xl:block'>
         <video
           onClick={handleVideoPlayback}
           // autoPlay
