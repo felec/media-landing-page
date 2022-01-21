@@ -1,83 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { motion } from 'framer-motion';
-
-const subSectionVariants = {
-  hidden: {
-    translateY: 60,
-    opacity: 0,
-  },
-  visible: {
-    translateY: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  },
-};
 
 export const InfoSection = () => {
   return (
     <section className='h-[300vh] xl:h-min'>
       <div className='flex flex-col items-center px-8 xs:px-10 lg:px-32 xl:px-60 xl:pb-8 transform -translate-y-[5%] xxs:-translate-y-[20%] xs:-translate-y-[25%] s:-translate-y-[45%] md:-translate-y-[40%] lg:-translate-y-[40%] xl:-translate-y-0 text-3xl font-bold text-center'>
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.25 }}
-          variants={subSectionVariants}
-          className='w-11/12 xs:w-10/12 xl:w-8/12'
-        >
+        <p className='w-11/12 xs:w-10/12 xl:w-8/12'>
           <strong className='text-purple-600 opacity-95'>
             Best collection{' '}
           </strong>
           of videos &#8213; Pariatur ipsam, Veritatis esse, and Quisipa harum.
-        </motion.p>
+        </p>
 
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.25 }}
-          variants={subSectionVariants}
-          className='w-10/12 xs:w-8/12 xl:w-5/12 my-12'
-        >
+        <p className='w-10/12 xs:w-8/12 xl:w-5/12 my-12'>
           <strong className='text-red-600 opacity-95'>200+ videos </strong>
           minima sint rem vitae.
-        </motion.p>
+        </p>
 
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.25 }}
-          variants={subSectionVariants}
-          className='w-9/12 xs:w-8/12 md:w-7/12 xl:w-4/12'
-        >
+        <p className='w-9/12 xs:w-8/12 md:w-7/12 xl:w-4/12'>
           <strong className='text-orange-600 opacity-95'>
             One subscription.{' '}
           </strong>
           Alias officiis. Expedita totam sint qunt.
-        </motion.p>
+        </p>
 
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.25 }}
-          variants={subSectionVariants}
-          className='w-8/12 xs:w-7/12 md:w-5/12 xl:w-3/12 my-12'
-        >
+        <p className='w-8/12 xs:w-7/12 md:w-5/12 xl:w-3/12 my-12'>
           <strong className='text-green-600 opacity-95'>
             Share with family{' '}
           </strong>
           veniam facere vero.
-        </motion.p>
+        </p>
 
         <div className='flex flex-col lg:flex-row w-11/12 xs:w-10/12 xl:w-8/12'>
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            variants={subSectionVariants}
-            viewport={{ once: true, amount: 0.25 }}
-            className='flex flex-col items-center xl:mr-4 text-lg text-center'
-          >
+          <div className='flex flex-col items-center xl:mr-4 text-lg text-center'>
             <h2>
               <span>Free 1-month trial</span>
               <br />
@@ -95,15 +49,9 @@ export const InfoSection = () => {
             >
               Try it free
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            variants={subSectionVariants}
-            viewport={{ once: true, amount: 0.25 }}
-            className='flex flex-col items-center mt-12 lg:mt-0 text-lg text-center'
-          >
+          <div className='flex flex-col items-center mt-12 lg:mt-0 text-lg text-center'>
             <h2>
               <span>Free 1-month trial</span>
               <br />
@@ -124,16 +72,10 @@ export const InfoSection = () => {
             >
               Try Superscriber*
             </a>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          variants={subSectionVariants}
-          viewport={{ once: true, amount: 0.25 }}
-          className='flex flex-col items-center w-11/12 xl:w-8/12 mt-12 text-lg text-center'
-        >
+        <div className='flex flex-col items-center w-11/12 xl:w-8/12 mt-12 text-lg text-center'>
           <h2 className='text-3xl'>Illum accusamus quasi odio!</h2>
 
           <p className='mt-4 font-medium tracking-tight'>
@@ -141,7 +83,7 @@ export const InfoSection = () => {
             esse autem quasi harum &#8213; non natus maxime veritatis architecto
             explicabo adipisci doloremque quam eaque quo mollitia totam.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
