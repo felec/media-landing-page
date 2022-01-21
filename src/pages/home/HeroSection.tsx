@@ -190,7 +190,15 @@ export const HeroSection = () => {
       </div>
       {/* 1280+ vid */}
       <div className='hidden 2xl:block min-h-screen z-40 mb-32'>
-        <video onClick={handleVideoPlayback} autoPlay muted loop>
+        <video
+          onClick={handleVideoPlayback}
+          poster={FitnessLarge}
+          controls={false}
+          playsInline
+          autoPlay
+          muted
+          loop
+        >
           <source src={FitnessVideo} type='video/mp4' />
         </video>
       </div>
@@ -254,6 +262,9 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
           <video
             className='phone-img-mask relative z-10'
             onClick={cb}
+            poster={FitnessMedium}
+            controls={false}
+            playsInline
             autoPlay
             muted
             loop
