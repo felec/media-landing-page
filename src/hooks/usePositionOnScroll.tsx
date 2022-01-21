@@ -48,7 +48,7 @@ export const usePositionOnScroll = (
 
   useEffect(() => {
     scroll.onChange((scroll) => {
-      if (ref.current && scroll < SCROLL_LIMIT + 0.2) {
+      if (ref.current && scroll < SCROLL_LIMIT * 2) {
         const rect = ref.current.getBoundingClientRect();
 
         setPosition({
