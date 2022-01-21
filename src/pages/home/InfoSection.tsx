@@ -11,7 +11,7 @@ export const InfoSection = () => {
           of videos &#8213; Pariatur ipsam, Veritatis esse, and Quisipa harum.
         </p>
 
-        <p className='w-10/12 xs:w-8/12 xl:w-5/12 my-12'>
+        <p className='w-10/12 xs:w-8/12 xl:w-5/12 my-12 2xl:my-16'>
           <strong className='text-red-600 opacity-95'>200+ videos </strong>
           minima sint rem vitae.
         </p>
@@ -23,14 +23,14 @@ export const InfoSection = () => {
           Alias officiis. Expedita totam sint qunt.
         </p>
 
-        <p className='w-8/12 xs:w-7/12 md:w-5/12 xl:w-3/12 my-12'>
+        <p className='w-8/12 xs:w-7/12 md:w-5/12 xl:w-3/12 my-12 2xl:my-16'>
           <strong className='text-green-600 opacity-95'>
             Share with family{' '}
           </strong>
           veniam facere vero.
         </p>
 
-        <div className='flex flex-col lg:flex-row w-11/12 xs:w-10/12 xl:w-8/12'>
+        <div className='flex flex-col lg:flex-row w-11/12 xs:w-10/12 xl:w-8/12 2xl:w-7/12'>
           <div className='flex flex-col items-center xl:mr-4 text-lg text-center'>
             <h2>
               <span>Free 1-month trial</span>
@@ -75,7 +75,7 @@ export const InfoSection = () => {
           </div>
         </div>
 
-        <div className='flex flex-col items-center w-11/12 xl:w-8/12 mt-12 text-lg text-center'>
+        <div className='flex flex-col items-center w-11/12 xl:w-8/12 2xl:w-7/12 mt-12 2xl:mt-16 text-lg text-center'>
           <h2 className='text-3xl'>Illum accusamus quasi odio!</h2>
 
           <p className='mt-4 font-medium tracking-tight'>
