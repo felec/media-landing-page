@@ -15,6 +15,42 @@ import {
   animateLargeVideo,
   animateMobileVideo,
 } from '../../utils/animations';
+// iphone masks
+import ShadowLarge from '../../assets/masks/hero-iphone-shadow-large.png';
+import ShadowMedium from '../../assets/masks/hero-iphone-shadow-medium.png';
+import ShadowSmall from '../../assets/masks/hero-iphone-shadow-small.png';
+import DeviceLarge from '../../assets/masks/hero-iphone-device-large.jpg';
+import DeviceMedium from '../../assets/masks/hero-iphone-device-medium.jpg';
+import DeviceSmall from '../../assets/masks/hero-iphone-device-small.jpg';
+// ipad masks
+import IPadShadowLarge from '../../assets/masks/hero-ipad-shadow-large.png';
+import IPadShadowMedium from '../../assets/masks/hero-ipad-shadow-medium.png';
+import IPadShadowSmall from '../../assets/masks/hero-ipad-shadow-small.png';
+import IPadLarge from '../../assets/masks/hero-ipad-device-large.jpg';
+import IPadMedium from '../../assets/masks/hero-ipad-device-medium.jpg';
+import IPadSmall from '../../assets/masks/hero-ipad-device-small.jpg';
+// media assets
+import Stretch from '../../assets/images/side-stretch-medium.jpg';
+import StretchLarge from '../../assets/images/side-stretch-large.jpg';
+import PreStretch from '../../assets/images/pre-stretch-medium.jpg';
+import PreStretchLarge from '../../assets/images/pre-stretch-large.jpg';
+import Laptop from '../../assets/images/laptop-workout-medium.jpg';
+import LaptopLarge from '../../assets/images/laptop-workout-medium.jpg';
+import Beach from '../../assets/images/beach-stretch-medium.jpg';
+import BeachLarge from '../../assets/images/beach-stretch-large.jpg';
+import LegStretch from '../../assets/images/leg-stretch-medium.jpg';
+import LegStretchLarge from '../../assets/images/leg-stretch-large.jpg';
+import KneeStretch from '../../assets/images/knee-stretch-medium.jpg';
+import KneeStretchLarge from '../../assets/images/knee-stretch-large.jpg';
+import LegLift from '../../assets/images/leg-lift-medium.jpg';
+import LegLiftLarge from '../../assets/images/leg-lift-large.jpg';
+import ArmRaise from '../../assets/images/arm-raise-medium.jpg';
+import ArmRaiseLarge from '../../assets/images/arm-raise-large.jpg';
+import Warrior from '../../assets/images/warrior-pose-medium.jpg';
+import WarriorLarge from '../../assets/images/warrior-pose-large.jpg';
+import FitnessMedium from '../../assets/images/fitness-class-medium.jpg';
+import FitnessLarge from '../../assets/images/fitness-class-large.jpg';
+import FitnessVideo from '../../assets/videos/fitness-class.mp4';
 
 export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
@@ -44,8 +80,8 @@ export const HeroSection = () => {
               classNames={
                 '-top-[8.5rem] -ml-[19.5rem] md:-top-[7rem] md:-ml-[25rem] lg:-top-[4rem] lg:-ml-[29.5rem] xl:hidden'
               }
-              medium={'/assets/images/side-stretch-medium.jpg'}
-              large={'/assets/images/side-stretch-large.jpg'}
+              medium={Stretch}
+              large={StretchLarge}
               translateX={animateXLeft(position) * 0.052}
               translateY={animateYUp(position)}
             />
@@ -53,8 +89,8 @@ export const HeroSection = () => {
               classNames={
                 '-top-[8.5rem] ml-2 md:-top-[7rem] md:ml-24 lg:-top-[4rem] lg:ml-[4.5rem] xl:hidden'
               }
-              medium={'/assets/images/pre-stretch-medium.jpg'}
-              large={'/assets/images/pre-stretch-large.jpg'}
+              medium={PreStretch}
+              large={PreStretchLarge}
               translateX={animateXRight(position) * 0.025}
               translateY={animateYUp(position)}
             />
@@ -64,8 +100,8 @@ export const HeroSection = () => {
               classNames={
                 'top-20 -ml-[27.5rem] md:top-[12.5rem] md:-ml-[34rem] lg:top-[19rem] lg:-ml-[45rem] xl:top-[1.5rem] xl:-ml-[55rem]'
               }
-              medium={'/assets/images/laptop-workout-medium.jpg'}
-              large={'/assets/images/laptop-workout-large.jpg'}
+              medium={Laptop}
+              large={LaptopLarge}
               translateX={animateXLeft(position) * 0.05}
               translateY={animateYUp(position)}
             />
@@ -73,8 +109,8 @@ export const HeroSection = () => {
               classNames={
                 'top-20 -ml-[12.5rem] md:top-[12.5rem] md:-ml-[13.5rem] lg:top-[19rem] lg:-ml-[17.5rem] xl:top-[1.5rem] xl:-ml-[22rem]'
               }
-              medium={'/assets/images/beach-stretch-medium.jpg'}
-              large={'/assets/images/beach-stretch-large.jpg'}
+              medium={Beach}
+              large={BeachLarge}
               translateX={0}
               translateY={animateYUp(position)}
             />
@@ -82,8 +118,8 @@ export const HeroSection = () => {
               classNames={
                 'top-20 ml-[2.5rem] md:top-[12.5rem] md:ml-[7rem] lg:top-[19rem] lg:ml-[10rem] xl:top-[1.5rem] xl:ml-44'
               }
-              medium={'/assets/images/knee-stretch-medium.jpg'}
-              large={'/assets/images/knee-stretch-large.jpg'}
+              medium={KneeStretch}
+              large={KneeStretchLarge}
               translateX={animateXRight(position) * 0.05}
               translateY={animateYUp(position)}
             />
@@ -93,8 +129,8 @@ export const HeroSection = () => {
               classNames={
                 'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35.5rem] lg:top-[34rem] lg:-ml-[46.5rem] xl:top-[19rem] xl:-ml-[61rem]'
               }
-              medium={'/assets/images/leg-stretch-medium.jpg'}
-              large={'/assets/images/leg-stretch-large.jpg'}
+              medium={LegStretch}
+              large={LegStretchLarge}
               translateX={animateXLeft(position)}
               translateY={0}
             />
@@ -107,8 +143,8 @@ export const HeroSection = () => {
               classNames={
                 'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[16rem] lg:top-[34rem] lg:ml-[21.5rem] xl:top-[19rem] xl:ml-[25rem]'
               }
-              medium={'/assets/images/leg-lift-medium.jpg'}
-              large={'/assets/images/leg-lift-large.jpg'}
+              medium={LegLift}
+              large={LegLiftLarge}
               translateX={animateXRight(position)}
               translateY={0}
             />
@@ -118,8 +154,8 @@ export const HeroSection = () => {
               classNames={
                 'top-[22.5rem] -ml-[19.5rem] md:top-[39rem] md:-ml-[25rem] lg:top-[51.5rem] lg:-ml-[29.5rem] xl:top-[45rem] xl:-ml-[46rem]'
               }
-              medium={'/assets/images/arm-raise-medium.jpg'}
-              large={'/assets/images/arm-raise-large.jpg'}
+              medium={ArmRaise}
+              large={ArmRaiseLarge}
               translateX={animateXLeft(position) * 0.025}
               translateY={animateYDown(position) * 0.8}
             />
@@ -127,8 +163,8 @@ export const HeroSection = () => {
               classNames={
                 'top-[22.5rem] ml-2 md:top-[39rem] md:ml-24 lg:top-[51.5rem] lg:ml-[4.5rem] xl:top-[45rem] xl:ml-52'
               }
-              medium={'/assets/images/warrior-pose-medium.jpg'}
-              large={'/assets/images/warrior-pose-large.jpg'}
+              medium={Warrior}
+              large={WarriorLarge}
               translateX={animateXRight(position) * 0.025}
               translateY={animateYDown(position) * 0.8}
             />
@@ -155,7 +191,7 @@ export const HeroSection = () => {
       {/* 1280+ vid */}
       <div className='hidden 2xl:block min-h-screen z-40 mb-32'>
         <video onClick={handleVideoPlayback} autoPlay muted loop>
-          <source src='/assets/videos/fitness-class.mp4' type='video/mp4' />
+          <source src={FitnessVideo} type='video/mp4' />
         </video>
       </div>
     </section>
@@ -177,41 +213,41 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
         <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
           <source
             media='(min-width: 1024px)'
-            srcSet='/assets/masks/hero-iphone-shadow-large.png'
+            srcSet={ShadowLarge}
             type='image/png'
           />
           <source
             media='(min-width: 768px)'
-            srcSet='/assets/masks/hero-iphone-shadow-medium.png'
+            srcSet={ShadowMedium}
             type='image/png'
           />
           <source
             media='(min-width: 0px)'
-            srcSet='/assets/masks/hero-iphone-shadow-small.png'
+            srcSet={ShadowSmall}
             type='image/png'
           />
 
-          <img src='/assets/masks/hero-iphone-shadow-large.png' alt='shadow' />
+          <img src={ShadowLarge} alt='shadow' />
         </picture>
 
         <picture className='phone-device-mask absolute top-0 left-0'>
           <source
             media='(min-width: 1024px)'
-            srcSet='/assets/masks/hero-iphone-device-large.jpg'
+            srcSet={DeviceLarge}
             type='image/jpg'
           />
           <source
             media='(min-width: 768px)'
-            srcSet='/assets/masks/hero-iphone-device-medium.jpg'
+            srcSet={DeviceMedium}
             type='image/jpg'
           />
           <source
             media='(min-width: 0px)'
-            srcSet='/assets/masks/hero-iphone-device-small.jpg'
+            srcSet={DeviceSmall}
             type='image/jpg'
           />
 
-          <img src='/assets/masks/hero-iphone-device-large.jpg' alt='phone' />
+          <img src={DeviceLarge} alt='iphone' />
         </picture>
 
         <div className='z-10 relative'>
@@ -222,26 +258,22 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
             muted
             loop
           >
-            <source src='/assets/videos/fitness-class.mp4' type='video/mp4' />
+            <source src={FitnessVideo} type='video/mp4' />
           </video>
 
           <picture className='phone-img-mask absolute top-0 left-0'>
             <source
               media='(min-width: 768px)'
-              srcSet={'/assets/images/fitness-class-medium.jpg'}
+              srcSet={FitnessMedium}
               type='image/jpg'
             />
             <source
               media='(min-width: 0px)'
-              srcSet={'/assets/images/fitness-class-large.jpg'}
+              srcSet={FitnessLarge}
               type='image/jpg'
             />
 
-            <img
-              className='phone-img-mask'
-              src={'/assets/images/fitness-class-large.jpg'}
-              alt=''
-            />
+            <img className='phone-img-mask' src={FitnessLarge} alt='iphone' />
           </picture>
         </div>
       </motion.div>
@@ -280,48 +312,48 @@ const IphoneDevice = ({
       <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
         <source
           media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-iphone-shadow-large.png'
+          srcSet={ShadowLarge}
           type='image/png'
         />
         <source
           media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-iphone-shadow-medium.png'
+          srcSet={ShadowMedium}
           type='image/png'
         />
         <source
           media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-iphone-shadow-small.png'
+          srcSet={ShadowSmall}
           type='image/png'
         />
 
-        <img src='/assets/masks/hero-iphone-shadow-large.png' alt='shadow' />
+        <img src={ShadowLarge} alt='shadow' />
       </picture>
 
       <picture className='phone-device-mask absolute top-0 left-0'>
         <source
           media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-iphone-device-large.jpg'
+          srcSet={DeviceLarge}
           type='image/jpg'
         />
         <source
           media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-iphone-device-medium.jpg'
+          srcSet={DeviceMedium}
           type='image/jpg'
         />
         <source
           media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-iphone-device-small.jpg'
+          srcSet={DeviceSmall}
           type='image/jpg'
         />
 
-        <img src='/assets/masks/hero-iphone-device-large.jpg' alt='phone' />
+        <img src={DeviceLarge} alt='iphone' />
       </picture>
 
       <picture className='phone-img-mask relative object-cover z-10'>
         <source media='(min-width: 768px)' srcSet={medium} type='image/jpg' />
         <source media='(min-width: 0px)' srcSet={large} type='image/jpg' />
 
-        <img className='phone-img-mask' src={large} alt='' />
+        <img className='phone-img-mask' src={large} alt='iphone' />
       </picture>
     </motion.div>
   );
@@ -371,41 +403,37 @@ const IpadDevice = ({
       <picture style={{ width: '118%' }} className='absolute top-0 left-0'>
         <source
           media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-ipad-shadow-large.png'
+          srcSet={IPadShadowLarge}
           type='image/png'
         />
         <source
           media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-ipad-shadow-medium.png'
+          srcSet={IPadShadowMedium}
           type='image/png'
         />
         <source
           media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-ipad-shadow-small.png'
+          srcSet={IPadShadowSmall}
           type='image/png'
         />
 
-        <img src='/assets/masks/hero-ipad-shadow-large.png' alt='shadow' />
+        <img src={IPadShadowLarge} alt='shadow' />
       </picture>
 
       <picture className='tablet-device-mask absolute top-0 left-0'>
         <source
           media='(min-width: 1024px)'
-          srcSet='/assets/masks/hero-ipad-device-large.jpg'
+          srcSet={IPadLarge}
           type='image/jpg'
         />
         <source
           media='(min-width: 768px)'
-          srcSet='/assets/masks/hero-ipad-device-medium.jpg'
+          srcSet={IPadMedium}
           type='image/jpg'
         />
-        <source
-          media='(min-width: 0px)'
-          srcSet='/assets/masks/hero-ipad-device-small.jpg'
-          type='image/jpg'
-        />
+        <source media='(min-width: 0px)' srcSet={IPadSmall} type='image/jpg' />
 
-        <img src='/assets/masks/hero-ipad-device-large.jpg' alt='phone' />
+        <img src={IPadLarge} alt='phone' />
       </picture>
 
       <picture className='tablet-img-mask relative z-10'>

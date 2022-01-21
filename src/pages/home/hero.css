@@ -1,8 +1,8 @@
 .phone-device-mask {
   height: 100%;
   width: 100%;
-  mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
-  -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+  mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
+  -webkit-mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -12,8 +12,8 @@
 }
 
 .tablet-device-mask {
-  mask-image: url(/public/assets/masks/hero-ipad-device-mask-large.png);
-  -webkit-mask-image: url(/public/assets/masks/hero-ipad-device-mask-large.png);
+  mask-image: url(../../assets/masks/hero-ipad-device-mask-large.png);
+  -webkit-mask-image: url(../../assets/masks/hero-ipad-device-mask-large.png);
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -26,8 +26,8 @@
 }
 
 .phone-img-mask {
-  mask-image: url(/public/assets/masks/iphone-image-mask.svg);
-  -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+  mask-image: url(../../assets/masks/iphone-image-mask.svg);
+  -webkit-mask-image: url(../../assets/masks/iphone-image-mask.svg);
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -37,8 +37,8 @@
 }
 
 .tablet-img-mask {
-  mask-image: url(/public/assets/masks/ipad-image-mask.svg);
-  -webkit-mask-image: url(/public/assets/masks/ipad-image-mask.svg);
+  mask-image: url(../../assets/masks/ipad-image-mask.svg);
+  -webkit-mask-image: url(../../assets/masks/ipad-image-mask.svg);
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -49,8 +49,8 @@
   .phone-device-mask {
     height: 102%;
     width: 102%;
-    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
-    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
@@ -60,8 +60,8 @@
   }
 
   .phone-img-mask {
-    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
-    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-image: url(../../assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(../../assets/masks/iphone-image-mask.svg);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
@@ -75,8 +75,8 @@
   .phone-device-mask {
     height: 100%;
     width: 100%;
-    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
-    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
@@ -91,8 +91,8 @@
   }
 
   .phone-img-mask {
-    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
-    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-image: url(../../assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(../../assets/masks/iphone-image-mask.svg);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
@@ -106,8 +106,8 @@
   .phone-device-mask {
     height: 100%;
     width: 100%;
-    mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
-    -webkit-mask-image: url(/public/assets/masks/hero-iphone-device-mask-large.png);
+    mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
+    -webkit-mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
@@ -122,8 +122,8 @@
   }
 
   .phone-img-mask {
-    mask-image: url(/public/assets/masks/iphone-image-mask.svg);
-    -webkit-mask-image: url(/public/assets/masks/iphone-image-mask.svg);
+    mask-image: url(../../assets/masks/iphone-image-mask.svg);
+    -webkit-mask-image: url(../../assets/masks/iphone-image-mask.svg);
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
