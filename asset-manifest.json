@@ -1,16 +1,44 @@
 {
   "files": {
-    "main.css": "/media-landing-page/static/css/main.77661948.css",
-    "main.js": "/media-landing-page/static/js/main.6f3cdbc9.js",
+    "main.css": "/media-landing-page/static/css/main.a647a14c.css",
+    "main.js": "/media-landing-page/static/js/main.5abcb901.js",
+    "static/media/fitness-class.mp4": "/media-landing-page/static/media/fitness-class.7569f361f9e1928383db.mp4",
+    "static/media/side-stretch-large.jpg": "/media-landing-page/static/media/side-stretch-large.09372a3038772b8eb6b2.jpg",
+    "static/media/knee-stretch-large.jpg": "/media-landing-page/static/media/knee-stretch-large.d85336b83fed192bf52a.jpg",
+    "static/media/pre-stretch-large.jpg": "/media-landing-page/static/media/pre-stretch-large.baf33007ac8f5828125c.jpg",
+    "static/media/leg-lift-large.jpg": "/media-landing-page/static/media/leg-lift-large.ac63b2ecf9e52730a4e6.jpg",
+    "static/media/warrior-pose-large.jpg": "/media-landing-page/static/media/warrior-pose-large.ee733f05d0f5f78ccb22.jpg",
+    "static/media/side-stretch-medium.jpg": "/media-landing-page/static/media/side-stretch-medium.2481dd3458340fb03b5a.jpg",
+    "static/media/fitness-class-medium.jpg": "/media-landing-page/static/media/fitness-class-medium.3ecf175cc94a1f2500aa.jpg",
+    "static/media/leg-lift-medium.jpg": "/media-landing-page/static/media/leg-lift-medium.b4a896dbe81e41a5c515.jpg",
+    "static/media/knee-stretch-medium.jpg": "/media-landing-page/static/media/knee-stretch-medium.71a43c79009f0ea3c210.jpg",
+    "static/media/hero-iphone-shadow-large.png": "/media-landing-page/static/media/hero-iphone-shadow-large.ee6519580f0beee5da40.png",
+    "static/media/pre-stretch-medium.jpg": "/media-landing-page/static/media/pre-stretch-medium.5d664569243dfde58561.jpg",
+    "static/media/warrior-pose-medium.jpg": "/media-landing-page/static/media/warrior-pose-medium.f9ff3b18a9a2f847d834.jpg",
+    "static/media/arm-raise-large.jpg": "/media-landing-page/static/media/arm-raise-large.2276b3de3319339be8ab.jpg",
+    "static/media/leg-stretch-large.jpg": "/media-landing-page/static/media/leg-stretch-large.45ca4d83cc88c08cc31d.jpg",
+    "static/media/fitness-class-large.jpg": "/media-landing-page/static/media/fitness-class-large.d74c69560d98dd6d7ff6.jpg",
+    "static/media/beach-stretch-large.jpg": "/media-landing-page/static/media/beach-stretch-large.399d8990c7aa722985e8.jpg",
+    "static/media/hero-ipad-shadow-large.png": "/media-landing-page/static/media/hero-ipad-shadow-large.0fe13255319ae00be354.png",
+    "static/media/hero-iphone-shadow-medium.png": "/media-landing-page/static/media/hero-iphone-shadow-medium.3099f75f9721fc28bd70.png",
+    "static/media/laptop-workout-medium.jpg": "/media-landing-page/static/media/laptop-workout-medium.46f8bad795281f97711b.jpg",
+    "static/media/arm-raise-medium.jpg": "/media-landing-page/static/media/arm-raise-medium.15a4efd0b30720cd7643.jpg",
+    "static/media/leg-stretch-medium.jpg": "/media-landing-page/static/media/leg-stretch-medium.62965564d25d3d84d3c9.jpg",
+    "static/media/hero-ipad-shadow-medium.png": "/media-landing-page/static/media/hero-ipad-shadow-medium.759077310af87463d608.png",
+    "static/media/beach-stretch-medium.jpg": "/media-landing-page/static/media/beach-stretch-medium.52efbe7f01c12186a8b2.jpg",
+    "static/media/hero-ipad-shadow-small.png": "/media-landing-page/static/media/hero-ipad-shadow-small.6d072236b67d361e464d.png",
+    "static/media/hero-iphone-device-large.jpg": "/media-landing-page/static/media/hero-iphone-device-large.f5c5d41da8e22e722386.jpg",
+    "static/media/hero-iphone-shadow-small.png": "/media-landing-page/static/media/hero-iphone-shadow-small.c1b9d24fdd2567048d56.png",
+    "static/media/hero-ipad-device-large.jpg": "/media-landing-page/static/media/hero-ipad-device-large.6276f775cee8e9ce53e0.jpg",
     "static/media/hero-ipad-device-mask-large.png": "/media-landing-page/static/media/hero-ipad-device-mask-large.86fda61171ab6e7105e7.png",
     "index.html": "/media-landing-page/index.html",
     "static/media/iphone-image-mask.svg": "/media-landing-page/static/media/iphone-image-mask.22a2ea3215306ece3f0a.svg",
     "static/media/ipad-image-mask.svg": "/media-landing-page/static/media/ipad-image-mask.131a3ab1374e6373b3b2.svg",
-    "main.77661948.css.map": "/media-landing-page/static/css/main.77661948.css.map",
-    "main.6f3cdbc9.js.map": "/media-landing-page/static/js/main.6f3cdbc9.js.map"
+    "main.a647a14c.css.map": "/media-landing-page/static/css/main.a647a14c.css.map",
+    "main.5abcb901.js.map": "/media-landing-page/static/js/main.5abcb901.js.map"
   },
   "entrypoints": [
-    "static/css/main.77661948.css",
-    "static/js/main.6f3cdbc9.js"
+    "static/css/main.a647a14c.css",
+    "static/js/main.5abcb901.js"
   ]
 }
