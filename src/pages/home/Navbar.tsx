@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState, ReactElement } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai';
 import { ImAccessibility } from 'react-icons/im';
+import { AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai';
 
 import { Modal } from './Modal';
 import { useModal } from '../../contexts/ModalContext';

@@ -91,7 +91,7 @@ export const InfoSection = () => {
 
             <a
               href='#'
-              className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+              className='px-6 py-3 mt-2 bg-blue-600 text-sm font-bold text-white rounded-full'
             >
               Try it free
             </a>
@@ -120,7 +120,7 @@ export const InfoSection = () => {
 
             <a
               href='#'
-              className='px-6 py-3 mt-2 bg-blue-600 text-sm text-white rounded-full'
+              className='px-6 py-3 mt-2 bg-blue-600 text-sm font-bold text-white rounded-full'
             >
               Try Superscriber*
             </a>

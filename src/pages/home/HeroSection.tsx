@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useRef, createRef, forwardRef, MouseEvent } from 'react';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { ImAccessibility } from 'react-icons/im';
 
 import './hero.css';
 import { VidProps } from '../../types';
@@ -134,13 +136,25 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className='hidden 2xl:block min-h-screen'>
-        <video
-          onClick={handleVideoPlayback}
-          // autoPlay
-          muted
-          loop
+      {/* "Calling all" Heading */}
+      <div className='absolute top-1/3 left-0 w-full flex flex-col items-center justify-center px-8 text-white z-50 overflow-hidden'>
+        <h1 className='flex items-center mb-1'>
+          <ImAccessibility size={18} color='#fff' />
+          <span className='text-lg font-medium ml-2'>Company</span>
+        </h1>
+        <h2 className='text-5xl lg:text-4xl font-bold text-center'>
+          Calling all <span>yogis</span>
+        </h2>
+        <a
+          href='#'
+          className='px-8 py-4 mt-4 bg-blue-600 hover:bg-blue-700 text-sm font-bold rounded-full'
         >
+          Try it free
+        </a>
+      </div>
+      {/* 1280+ vid */}
+      <div className='hidden 2xl:block min-h-screen z-40 mb-32'>
+        <video onClick={handleVideoPlayback} autoPlay muted loop>
           <source src='/assets/videos/fitness-class.mp4' type='video/mp4' />
         </video>
       </div>
@@ -158,7 +172,7 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
       <motion.div
         ref={ref}
         style={{ left: '50%', scale }}
-        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[34rem] lg:-ml-[12.5rem] xl:top-[19rem] xl:-ml-72 z-50'
+        className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[34rem] lg:-ml-[12.5rem] xl:top-[19rem] xl:-ml-72 z-40'
       >
         <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
           <source
@@ -204,7 +218,7 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
           <video
             className='phone-img-mask relative z-10'
             onClick={cb}
-            // autoPlay
+            autoPlay
             muted
             loop
           >
