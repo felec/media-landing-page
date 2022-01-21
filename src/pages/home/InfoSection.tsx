@@ -49,7 +49,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='w-9/12 xs:w-8/12 xl:w-4/12'
+          className='w-9/12 xs:w-8/12 md:w-7/12 xl:w-4/12'
         >
           <strong className='text-orange-600 opacity-95'>
             One subscription.{' '}
@@ -62,7 +62,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='w-8/12 xs:w-7/12 xl:w-3/12 my-12'
+          className='w-8/12 xs:w-7/12 md:w-5/12 xl:w-3/12 my-12'
         >
           <strong className='text-green-600 opacity-95'>
             Share with family{' '}
@@ -70,7 +70,7 @@ export const InfoSection = () => {
           veniam facere vero.
         </motion.p>
 
-        <div className='flex flex-col lg:flex-row w-11/12 xs:w-10/12 xl:w-7/12'>
+        <div className='flex flex-col lg:flex-row w-11/12 xs:w-10/12 xl:w-8/12'>
           <motion.div
             initial='hidden'
             whileInView='visible'
@@ -91,7 +91,7 @@ export const InfoSection = () => {
 
             <a
               href='#'
-              className='px-6 py-3 mt-2 bg-blue-600 text-sm font-bold text-white rounded-full'
+              className='px-6 py-3 mt-2 bg-blue-600 hover:opacity-80 text-sm font-bold text-white rounded-full'
             >
               Try it free
             </a>
@@ -120,7 +120,7 @@ export const InfoSection = () => {
 
             <a
               href='#'
-              className='px-6 py-3 mt-2 bg-blue-600 text-sm font-bold text-white rounded-full'
+              className='px-6 py-3 mt-2 bg-blue-600 hover:opacity-80 text-sm font-bold text-white rounded-full'
             >
               Try Superscriber*
             </a>
@@ -132,7 +132,7 @@ export const InfoSection = () => {
           whileInView='visible'
           variants={subSectionVariants}
           viewport={{ once: true, amount: 0.25 }}
-          className='flex flex-col items-center w-11/12 xl:w-7/12 mt-12 text-lg text-center'
+          className='flex flex-col items-center w-11/12 xl:w-8/12 mt-12 text-lg text-center'
         >
           <h2 className='text-3xl'>Illum accusamus quasi odio!</h2>
 

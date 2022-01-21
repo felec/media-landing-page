@@ -183,7 +183,7 @@ export const HeroSection = () => {
         </h2>
         <a
           href='#'
-          className='px-8 py-4 mt-4 bg-blue-600 hover:bg-blue-700 text-sm font-bold rounded-full'
+          className='px-8 py-4 mt-4 bg-blue-600 hover:opacity-80 text-sm font-bold rounded-full'
         >
           Try it free
         </a>
@@ -307,7 +307,7 @@ const IphoneDevice = ({
         translateX,
         translateY,
       }}
-      className={`phone-size absolute ${classNames}`}
+      className={`phone-size absolute z-0 ${classNames}`}
     >
       <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
         <source
@@ -398,7 +398,7 @@ const IpadDevice = ({
         translateX,
         translateY,
       }}
-      className={`phone-size absolute ${classNames}`}
+      className={`phone-size absolute z-0 ${classNames}`}
     >
       <picture style={{ width: '118%' }} className='absolute top-0 left-0'>
         <source
