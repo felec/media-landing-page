@@ -2,7 +2,7 @@ import { useRef, createRef, forwardRef, MouseEvent } from 'react';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 
 import './hero.css';
-import { VidProps } from '../../interfaces';
+import { VidProps } from '../../types';
 import { useScreenSize } from '../../hooks/useScreenSize';
 import { usePositionOnScroll } from '../../hooks/usePositionOnScroll';
 import {
@@ -40,7 +40,7 @@ export const HeroSection = () => {
             {/* Top Ipad Row */}
             <IpadDevice
               classNames={
-                '-top-[8.5rem] -ml-[19.5rem] md:-top-[16.5rem] md:-ml-[25rem] lg:-top-[22rem] lg:-ml-[29.5rem] xl:hidden'
+                '-top-[8.5rem] -ml-[19.5rem] md:-top-[7rem] md:-ml-[25rem] lg:-top-[4rem] lg:-ml-[29.5rem] xl:hidden'
               }
               medium={'/assets/images/side-stretch-medium.jpg'}
               large={'/assets/images/side-stretch-large.jpg'}
@@ -49,7 +49,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                '-top-[8.5rem] ml-2 md:-top-[16.5rem] md:ml-24 lg:-top-[22rem] lg:ml-[4.5rem] xl:hidden'
+                '-top-[8.5rem] ml-2 md:-top-[7rem] md:ml-24 lg:-top-[4rem] lg:ml-[4.5rem] xl:hidden'
               }
               medium={'/assets/images/pre-stretch-medium.jpg'}
               large={'/assets/images/pre-stretch-large.jpg'}
@@ -60,7 +60,7 @@ export const HeroSection = () => {
             {/* Top Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-20 -ml-[27.5rem] md:top-[3rem] md:-ml-[34.5rem] lg:top-[0.5rem] lg:-ml-[45rem] xl:-top-[6rem] xl:-ml-[55rem]'
+                'top-20 -ml-[27.5rem] md:top-[12.5rem] md:-ml-[34rem] lg:top-[19rem] lg:-ml-[45rem] xl:top-[1.5rem] xl:-ml-[55rem]'
               }
               medium={'/assets/images/laptop-workout-medium.jpg'}
               large={'/assets/images/laptop-workout-large.jpg'}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 -ml-[12.5rem] md:top-[3rem] md:-ml-[13.5rem] lg:top-[0.5rem] lg:-ml-[17.5rem] xl:-top-[6rem] xl:-ml-[21rem]'
+                'top-20 -ml-[12.5rem] md:top-[12.5rem] md:-ml-[13.5rem] lg:top-[19rem] lg:-ml-[17.5rem] xl:top-[1.5rem] xl:-ml-[22rem]'
               }
               medium={'/assets/images/beach-stretch-medium.jpg'}
               large={'/assets/images/beach-stretch-large.jpg'}
@@ -78,7 +78,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 ml-[2.5rem] md:top-[3rem] md:ml-[7.5rem] lg:top-[0.5rem] lg:ml-[10rem] xl:-top-[6rem] xl:ml-52'
+                'top-20 ml-[2.5rem] md:top-[12.5rem] md:ml-[7rem] lg:top-[19rem] lg:ml-[10rem] xl:top-[1.5rem] xl:ml-44'
               }
               medium={'/assets/images/knee-stretch-medium.jpg'}
               large={'/assets/images/knee-stretch-large.jpg'}
@@ -89,7 +89,7 @@ export const HeroSection = () => {
             {/* Bottom Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35rem] lg:top-[34rem] lg:-ml-[46.5rem] xl:top-[19rem] xl:-ml-[61rem]'
+                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35.5rem] lg:top-[34rem] lg:-ml-[46.5rem] xl:top-[19rem] xl:-ml-[61rem]'
               }
               medium={'/assets/images/leg-stretch-medium.jpg'}
               large={'/assets/images/leg-stretch-large.jpg'}
@@ -103,7 +103,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[15.5rem] lg:top-[34rem] lg:ml-[21.5rem] xl:top-[19rem] xl:ml-[25rem]'
+                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[16rem] lg:top-[34rem] lg:ml-[21.5rem] xl:top-[19rem] xl:ml-[25rem]'
               }
               medium={'/assets/images/leg-lift-medium.jpg'}
               large={'/assets/images/leg-lift-large.jpg'}
@@ -114,7 +114,7 @@ export const HeroSection = () => {
             {/* Bottom Ipad Row */}
             <IpadDevice
               classNames={
-                'top-[22.5rem] -ml-[19.5rem] md:top-[46.5rem] md:-ml-[25rem] lg:top-[66rem] lg:-ml-[29.5rem] xl:top-[51.5rem] xl:-ml-[46rem]'
+                'top-[22.5rem] -ml-[19.5rem] md:top-[39rem] md:-ml-[25rem] lg:top-[51.5rem] lg:-ml-[29.5rem] xl:top-[45rem] xl:-ml-[46rem]'
               }
               medium={'/assets/images/arm-raise-medium.jpg'}
               large={'/assets/images/arm-raise-large.jpg'}
@@ -123,7 +123,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                'top-[22.5rem] ml-2 md:top-[46.5rem] md:ml-24 lg:top-[66rem] lg:ml-[4.5rem] xl:top-[51.5rem] xl:ml-52'
+                'top-[22.5rem] ml-2 md:top-[39rem] md:ml-24 lg:top-[51.5rem] lg:ml-[4.5rem] xl:top-[45rem] xl:ml-52'
               }
               medium={'/assets/images/warrior-pose-medium.jpg'}
               large={'/assets/images/warrior-pose-large.jpg'}

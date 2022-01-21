@@ -1,4 +1,4 @@
-import { RectBounds, SCROLL_LIMIT } from '../interfaces';
+import { RectBounds, SCROLL_LIMIT } from '../types';
 
 export const animateMobileVideo = (scroll: number): number => {
   const scale = 11.5;
@@ -35,12 +35,16 @@ export const animateXRight = (pos: RectBounds) => {
 };
 
 export const animateYUp = (pos: RectBounds) => {
+  if (pos.scroll > SCROLL_LIMIT) return 0;
+
   const translateY = pos.top - pos.originTop;
 
   return translateY;
 };
 
 export const animateYDown = (pos: RectBounds) => {
+  if (pos.scroll > SCROLL_LIMIT) return 0;
+
   const translateY = pos.originTop - pos.top;
 
   return translateY;

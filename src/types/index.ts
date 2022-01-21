@@ -8,6 +8,7 @@ export interface RectBounds {
   originLeft: number;
   top: number;
   left: number;
+  scroll: number;
 }
 
 export interface Origins {

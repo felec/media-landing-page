@@ -19,13 +19,13 @@ const subSectionVariants = {
 export const InfoSection = () => {
   return (
     <section className='h-[300vh] xl:h-min'>
-      <div className='flex flex-col items-center px-8 md:px-12 lg:px-32 xl:px-60 transform -translate-y-[12%] ss:-translate-y-[15%] xs:-translate-y-[42%] md:-translate-y-[15%] lg:-translate-y-[30%] xl:-translate-y-0 xl:py-24 text-3xl font-bold text-center'>
+      <div className='flex flex-col items-center px-8 md:px-12 lg:px-32 xl:px-60 xl:pb-8 transform -translate-y-[4%] xxs:-translate-y-[23%] xs:-translate-y-[25%] s:-translate-y-[45%] md:-translate-y-[40%] lg:-translate-y-[40%] xl:-translate-y-0 text-3xl font-bold text-center'>
         <motion.p
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='xs:w-9/12 xl:w-5/12'
+          className='xs:w-10/12 xl:w-8/12'
         >
           <strong className='text-purple-600 opacity-95'>
             Best collection{' '}
@@ -38,7 +38,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='xs:w-8/12 xl:w-4/12 my-12'
+          className='xs:w-8/12 xl:w-5/12 my-12'
         >
           <strong className='text-red-600 opacity-95'>200+ videos </strong>
           minima sint rem vitae.
@@ -49,7 +49,7 @@ export const InfoSection = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.25 }}
           variants={subSectionVariants}
-          className='xs:w-7/12 xl:w-3/12'
+          className='xs:w-6/12 xl:w-4/12'
         >
           <strong className='text-orange-600 opacity-95'>
             One subscription.{' '}
