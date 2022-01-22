@@ -7,8 +7,8 @@
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
-  mask-position: 0px -2px;
-  -webkit-mask-position: 0px -2px;
+  mask-position: 0px -1.5px;
+  -webkit-mask-position: 0px -1.5px;
 }
 
 .tablet-device-mask {
@@ -51,12 +51,12 @@
     width: 102%;
     mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
     -webkit-mask-image: url(../../assets/masks/hero-iphone-device-mask-large.png);
-    mask-size: contain;
-    -webkit-mask-size: contain;
+    mask-size: 98%;
+    -webkit-mask-size: 98%;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: -1px -1px;
-    -webkit-mask-position: -1px -1px;
+    mask-position: 2px -0.5px;
+    -webkit-mask-position: 2px -0.5px;
   }
 
   .phone-img-mask {
