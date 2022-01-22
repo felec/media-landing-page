@@ -55,8 +55,8 @@
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: -4px -4px;
-    -webkit-mask-position: -4px -4px;
+    mask-position: -1px -1px;
+    -webkit-mask-position: -1px -1px;
   }
 
   .phone-img-mask {
@@ -66,8 +66,8 @@
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: 2px -1px;
-    -webkit-mask-position: 2px -1px;
+    mask-position: 2.5px -1px;
+    -webkit-mask-position: 2.5px -1px;
   }
 }
 

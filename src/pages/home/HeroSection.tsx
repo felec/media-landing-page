@@ -78,7 +78,7 @@ export const HeroSection = () => {
             {/* Top Ipad Row */}
             <IpadDevice
               classNames={
-                '-top-[8.5rem] -ml-[19.5rem] md:-top-[7rem] md:-ml-[25rem] lg:-top-[4rem] lg:-ml-[29.5rem] xl:hidden'
+                '-top-[8.5rem] -ml-[19.5rem] md:-top-[6.5rem] md:-ml-[25rem] lg:-top-[4rem] lg:-ml-[29.5rem] xl:hidden'
               }
               medium={Stretch}
               large={StretchLarge}
@@ -87,7 +87,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                '-top-[8.5rem] ml-2 md:-top-[7rem] md:ml-24 lg:-top-[4rem] lg:ml-[4.5rem] xl:hidden'
+                '-top-[8.5rem] ml-3 md:-top-[6.5rem] md:ml-24 lg:-top-[4rem] lg:ml-[4.5rem] xl:hidden'
               }
               medium={PreStretch}
               large={PreStretchLarge}
@@ -98,7 +98,7 @@ export const HeroSection = () => {
             {/* Top Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-20 -ml-[27.5rem] md:top-[12.5rem] md:-ml-[34rem] lg:top-[19rem] lg:-ml-[45rem] xl:top-[1.5rem] xl:-ml-[55rem]'
+                'top-20 -ml-[27.5rem] md:top-[12.5rem] md:-ml-[34rem] lg:top-[19rem] lg:-ml-[44.25rem] xl:top-[1.5rem] xl:-ml-[55rem]'
               }
               medium={Laptop}
               large={LaptopLarge}
@@ -116,7 +116,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-20 ml-[2.5rem] md:top-[12.5rem] md:ml-[7rem] lg:top-[19rem] lg:ml-[10rem] xl:top-[1.5rem] xl:ml-44'
+                'top-20 ml-[2.5rem] md:top-[12.5rem] md:ml-[7rem] lg:top-[19rem] lg:ml-[9.25rem] xl:top-[1.5rem] xl:ml-44'
               }
               medium={KneeStretch}
               large={KneeStretchLarge}
@@ -127,7 +127,7 @@ export const HeroSection = () => {
             {/* Bottom Iphone Row */}
             <IphoneDevice
               classNames={
-                'top-52 -ml-[24.25rem] md:top-[24rem] md:-ml-[35.5rem] lg:top-[34rem] lg:-ml-[46.5rem] xl:top-[19rem] xl:-ml-[61rem]'
+                'top-52 -ml-[24.5rem] md:top-[24rem] md:-ml-[35.5rem] lg:top-[34rem] lg:-ml-[46rem] xl:top-[19rem] xl:-ml-[61rem]'
               }
               medium={LegStretch}
               large={LegStretchLarge}
@@ -141,7 +141,7 @@ export const HeroSection = () => {
             />
             <IphoneDevice
               classNames={
-                'top-52 ml-[5.5rem] md:top-[24rem] md:ml-[16rem] lg:top-[34rem] lg:ml-[21.5rem] xl:top-[19rem] xl:ml-[25rem]'
+                'top-52 ml-[5.75rem] md:top-[24rem] md:ml-[16rem] lg:top-[34rem] lg:ml-[21rem] xl:top-[19rem] xl:ml-[25rem]'
               }
               medium={LegLift}
               large={LegLiftLarge}
@@ -161,7 +161,7 @@ export const HeroSection = () => {
             />
             <IpadDevice
               classNames={
-                'top-[22.5rem] ml-2 md:top-[39rem] md:ml-24 lg:top-[51.5rem] lg:ml-[4.5rem] xl:top-[45rem] xl:ml-52'
+                'top-[22.5rem] ml-3 md:top-[39rem] md:ml-24 lg:top-[51.5rem] lg:ml-[4.5rem] xl:top-[45rem] xl:ml-44'
               }
               medium={Warrior}
               large={WarriorLarge}
@@ -218,7 +218,10 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
         style={{ left: '50%', scale }}
         className='phone-size absolute top-52 -ml-[9.4rem] md:top-[24rem] md:-ml-[9.7rem] lg:top-[34rem] lg:-ml-[12.5rem] xl:top-[19rem] xl:-ml-72 z-10'
       >
-        <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
+        <picture
+          style={{ width: '122%' }}
+          className='absolute top-0 left-0 z-[9]'
+        >
           <source
             media='(min-width: 1024px)'
             srcSet={ShadowLarge}
@@ -238,7 +241,7 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
           <img src={ShadowLarge} alt='shadow' />
         </picture>
 
-        <picture className='phone-device-mask absolute top-0 left-0'>
+        <picture className='phone-device-mask absolute top-0 left-0 z-[8]'>
           <source
             media='(min-width: 1024px)'
             srcSet={DeviceLarge}
@@ -262,7 +265,7 @@ const VideoDevice = forwardRef<HTMLDivElement, VidProps>(
           <video
             className='phone-img-mask relative z-10'
             onClick={cb}
-            poster={FitnessMedium}
+            poster={FitnessLarge}
             controls={false}
             playsInline
             autoPlay
@@ -320,7 +323,10 @@ const IphoneDevice = ({
       }}
       className={`phone-size absolute z-0 ${classNames}`}
     >
-      <picture style={{ width: '122%' }} className='absolute top-0 left-0'>
+      <picture
+        style={{ width: '122%' }}
+        className='absolute top-0 left-0 z-[9]'
+      >
         <source
           media='(min-width: 1024px)'
           srcSet={ShadowLarge}
@@ -340,7 +346,7 @@ const IphoneDevice = ({
         <img src={ShadowLarge} alt='shadow' />
       </picture>
 
-      <picture className='phone-device-mask absolute top-0 left-0'>
+      <picture className='phone-device-mask absolute top-0 left-0 z-[8]'>
         <source
           media='(min-width: 1024px)'
           srcSet={DeviceLarge}
@@ -360,12 +366,14 @@ const IphoneDevice = ({
         <img src={DeviceLarge} alt='iphone' />
       </picture>
 
-      <picture className='phone-img-mask relative object-cover z-10'>
-        <source media='(min-width: 768px)' srcSet={medium} type='image/jpg' />
-        <source media='(min-width: 0px)' srcSet={large} type='image/jpg' />
+      <div className='relative z-10'>
+        <picture className='phone-img-mask object-cover'>
+          <source media='(min-width: 768px)' srcSet={medium} type='image/jpg' />
+          <source media='(min-width: 0px)' srcSet={large} type='image/jpg' />
 
-        <img className='phone-img-mask' src={large} alt='iphone' />
-      </picture>
+          <img className='phone-img-mask' src={large} alt='iphone' />
+        </picture>
+      </div>
     </motion.div>
   );
 };
