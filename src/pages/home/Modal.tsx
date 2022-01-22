@@ -160,20 +160,14 @@ const mobileSearchVariants = {
 
 const mobileCancelVariants = {
   unfocus: {
-    display: 'none',
     opacity: 0,
-    translateY: 0,
-    translateX: 0,
     transition: {
       duration: 0.25,
       ease: 'easeOut',
     },
   },
   focus: {
-    display: 'block',
     opacity: 1,
-    translateY: -10,
-    translateX: -14,
     transition: {
       delay: 0.01,
       duration: 0.25,
@@ -232,7 +226,7 @@ export const Modal = ({
             animate='open'
             exit='close'
             variants={mobileMenuVariants}
-            style={{ height: '120vh', width: '100vw' }}
+            style={{ height: '125vh', width: '100vw' }}
             className='md:hidden absolute -top-28 left-0 flex flex-col items-center py-4 bg-black z-20 overflow-hidden'
           >
             <motion.div
@@ -243,7 +237,7 @@ export const Modal = ({
             >
               <motion.div
                 variants={mobileSearchVariants}
-                className='ml-4 h-9 flex items-center px-1 bg-zinc-800 rounded-md'
+                className='relative ml-4 h-9 flex items-center px-1 bg-zinc-800 rounded-md'
               >
                 <div>
                   <AiOutlineSearch color='#6B7280' size={20} />
@@ -264,7 +258,7 @@ export const Modal = ({
                   onClick={handleSearchUnfocus}
                   variants={mobileCancelVariants}
                   style={{ WebkitTapHighlightColor: 'transparent' }}
-                  className='absolute top-40 right-4 text-blue-500 font-thin'
+                  className='absolute top-2 -right-1/4 text-blue-500'
                 >
                   Cancel
                 </motion.button>
@@ -282,7 +276,7 @@ export const Modal = ({
               variants={mobileLinksVariants}
               className='absolute top-36 left-10 w-full flex flex-col'
             >
-              <h3 className='text-xs font-thin mb-2 text-gray-500 uppercase'>
+              <h3 className='text-xs mb-4 text-gray-400 uppercase'>
                 Quick Links
               </h3>
 

@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from 'react';
 import { MotionValue } from 'framer-motion';
 
-import { RectBounds, SCROLL_LIMIT } from '../types';
+import { RectBounds } from '../types';
 import { isBetween } from '../utils/calculate';
 
 export const usePositionOnScroll = (
