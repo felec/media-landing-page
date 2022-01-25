@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/media-landing-page/static/css/main.8c19b8d5.css",
+    "main.css": "/media-landing-page/static/css/main.00241668.css",
     "main.js": "/media-landing-page/static/js/main.b7c6b62e.js",
     "static/media/fitness-class.mp4": "/media-landing-page/static/media/fitness-class.7569f361f9e1928383db.mp4",
     "static/media/side-stretch-large.jpg": "/media-landing-page/static/media/side-stretch-large.09372a3038772b8eb6b2.jpg",
@@ -34,11 +34,11 @@
     "index.html": "/media-landing-page/index.html",
     "static/media/iphone-image-mask.svg": "/media-landing-page/static/media/iphone-image-mask.22a2ea3215306ece3f0a.svg",
     "static/media/ipad-image-mask.svg": "/media-landing-page/static/media/ipad-image-mask.131a3ab1374e6373b3b2.svg",
-    "main.8c19b8d5.css.map": "/media-landing-page/static/css/main.8c19b8d5.css.map",
+    "main.00241668.css.map": "/media-landing-page/static/css/main.00241668.css.map",
     "main.b7c6b62e.js.map": "/media-landing-page/static/js/main.b7c6b62e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c19b8d5.css",
+    "static/css/main.00241668.css",
     "static/js/main.b7c6b62e.js"
   ]
 }
