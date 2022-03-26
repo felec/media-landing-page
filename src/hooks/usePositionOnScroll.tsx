@@ -3,7 +3,7 @@ import { MotionValue } from 'framer-motion';
 
 import { RectBounds, SCROLL_LIMIT } from '../types';
 import { isBetween } from '../utils/calculate';
-import { useDebounce } from './useDebounce';
+import { useScrollListener } from './useScrollListener';
 
 export const usePositionOnScroll = (
   ref: RefObject<HTMLElement>,
@@ -16,7 +16,8 @@ export const usePositionOnScroll = (
     left: 0,
     scroll: 0,
   });
-  const debouncedScroll = useDebounce<number>(position.scroll, 200);
+  const { scrollValue } = useScrollListener();
+  console.log(scrollValue);
 
   const calculateLeft = () => {
     const w = window.innerWidth;
@@ -50,7 +51,7 @@ export const usePositionOnScroll = (
 
   useEffect(() => {
     scroll.onChange((v) => {
-      if (ref.current && debouncedScroll < SCROLL_LIMIT) {
+      if (ref.current && v < SCROLL_LIMIT) {
         const rect = ref.current.getBoundingClientRect();
 
         setPosition({
