@@ -1,20 +1,22 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import { MotionValue } from 'framer-motion';
 
 import { RectBounds, SCROLL_LIMIT } from '../types';
 import { isBetween } from '../utils/calculate';
+import { useDebounce } from './useDebounce';
 
 export const usePositionOnScroll = (
   ref: RefObject<HTMLElement>,
   scroll: MotionValue<number>
 ) => {
-  const position = useRef<RectBounds>({
+  const [position, setPosition] = useState<RectBounds>({
     originTop: 0,
     originLeft: 0,
     top: 0,
     left: 0,
     scroll: 0,
   });
+  const debouncedScroll = useDebounce<number>(position.scroll, 200);
 
   const calculateLeft = () => {
     const w = window.innerWidth;
@@ -48,16 +50,16 @@ export const usePositionOnScroll = (
 
   useEffect(() => {
     scroll.onChange((v) => {
-      if (ref.current) {
+      if (ref.current && debouncedScroll < SCROLL_LIMIT) {
         const rect = ref.current.getBoundingClientRect();
 
-        position.current = {
+        setPosition({
           originLeft: calculateLeft(),
           originTop: calculateTop(),
           top: rect.top,
           left: window.innerWidth - rect.width,
           scroll: v,
-        };
+        });
       }
     });
 
