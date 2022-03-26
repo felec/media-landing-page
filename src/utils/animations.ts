@@ -23,6 +23,7 @@ export const animateLargeVideo = (scroll: number): number => {
 };
 
 export const animateXLeft = (pos: RectBounds) => {
+  console.log(pos);
   const translateX = pos.left - pos.originLeft;
 
   return translateX;

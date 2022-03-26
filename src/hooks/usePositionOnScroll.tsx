@@ -1,14 +1,14 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useRef } from 'react';
 import { MotionValue } from 'framer-motion';
 
-import { RectBounds } from '../types';
+import { RectBounds, SCROLL_LIMIT } from '../types';
 import { isBetween } from '../utils/calculate';
 
 export const usePositionOnScroll = (
   ref: RefObject<HTMLElement>,
   scroll: MotionValue<number>
 ) => {
-  const [position, setPosition] = useState<RectBounds>({
+  const position = useRef<RectBounds>({
     originTop: 0,
     originLeft: 0,
     top: 0,
@@ -35,9 +35,9 @@ export const usePositionOnScroll = (
     const h = window.innerWidth;
     let origin = 228;
 
-    if (isBetween(h, 768, 1023)) {
+    if (isBetween(h, 768, 1024)) {
       origin = 383;
-    } else if (isBetween(h, 1024, 1279)) {
+    } else if (isBetween(h, 1024, 1280)) {
       origin = 543;
     } else if (h > 1280) {
       origin = 303;
@@ -47,17 +47,17 @@ export const usePositionOnScroll = (
   };
 
   useEffect(() => {
-    scroll.onChange((scroll) => {
+    scroll.onChange((v) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
 
-        setPosition({
+        position.current = {
           originLeft: calculateLeft(),
           originTop: calculateTop(),
           top: rect.top,
           left: window.innerWidth - rect.width,
-          scroll,
-        });
+          scroll: v,
+        };
       }
     });
 

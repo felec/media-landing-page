@@ -56,6 +56,7 @@ export const HeroSection = () => {
   const ref = createRef<HTMLDivElement>();
   const { scrollYProgress } = useViewportScroll();
   const { position } = usePositionOnScroll(ref, scrollYProgress);
+  const pos = position.current;
 
   const handleVideoPlayback = (e: MouseEvent<HTMLVideoElement>) => {
     const vid = e.currentTarget;
@@ -82,8 +83,8 @@ export const HeroSection = () => {
               }
               medium={Stretch}
               large={StretchLarge}
-              translateX={animateXLeft(position) * 0.052}
-              translateY={animateYUp(position)}
+              translateX={animateXLeft(pos) * 0.052}
+              translateY={animateYUp(pos)}
             />
             <IpadDevice
               classNames={
@@ -91,8 +92,8 @@ export const HeroSection = () => {
               }
               medium={PreStretch}
               large={PreStretchLarge}
-              translateX={animateXRight(position) * 0.025}
-              translateY={animateYUp(position)}
+              translateX={animateXRight(pos) * 0.025}
+              translateY={animateYUp(pos)}
             />
 
             {/* Top Iphone Row */}
@@ -102,8 +103,8 @@ export const HeroSection = () => {
               }
               medium={Laptop}
               large={LaptopLarge}
-              translateX={animateXLeft(position) * 0.05}
-              translateY={animateYUp(position)}
+              translateX={animateXLeft(pos) * 0.05}
+              translateY={animateYUp(pos)}
             />
             <IphoneDevice
               classNames={
@@ -112,7 +113,7 @@ export const HeroSection = () => {
               medium={Beach}
               large={BeachLarge}
               translateX={0}
-              translateY={animateYUp(position)}
+              translateY={animateYUp(pos)}
             />
             <IphoneDevice
               classNames={
@@ -120,8 +121,8 @@ export const HeroSection = () => {
               }
               medium={KneeStretch}
               large={KneeStretchLarge}
-              translateX={animateXRight(position) * 0.05}
-              translateY={animateYUp(position)}
+              translateX={animateXRight(pos) * 0.05}
+              translateY={animateYUp(pos)}
             />
 
             {/* Bottom Iphone Row */}
@@ -131,7 +132,7 @@ export const HeroSection = () => {
               }
               medium={LegStretch}
               large={LegStretchLarge}
-              translateX={animateXLeft(position)}
+              translateX={animateXLeft(pos)}
               translateY={0}
             />
             <VideoDevice
@@ -145,7 +146,7 @@ export const HeroSection = () => {
               }
               medium={LegLift}
               large={LegLiftLarge}
-              translateX={animateXRight(position)}
+              translateX={animateXRight(pos)}
               translateY={0}
             />
 
@@ -156,8 +157,8 @@ export const HeroSection = () => {
               }
               medium={ArmRaise}
               large={ArmRaiseLarge}
-              translateX={animateXLeft(position) * 0.025}
-              translateY={animateYDown(position) * 0.8}
+              translateX={animateXLeft(pos) * 0.025}
+              translateY={animateYDown(pos) * 0.8}
             />
             <IpadDevice
               classNames={
@@ -165,8 +166,8 @@ export const HeroSection = () => {
               }
               medium={Warrior}
               large={WarriorLarge}
-              translateX={animateXRight(position) * 0.025}
-              translateY={animateYDown(position) * 0.8}
+              translateX={animateXRight(pos) * 0.025}
+              translateY={animateYDown(pos) * 0.8}
             />
           </div>
         </div>
